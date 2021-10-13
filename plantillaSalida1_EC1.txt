@@ -1,0 +1,79 @@
+***** Inicio del campeonato: Campeonato de Extremadura *****
+
+***** Listado de competidores: 
+  Tenista [nombre=Novak Djokovic, saque=90.0, resto=80.0, ranking=1, pais=Serbia] 
+   Zapatillas [modelo=Air Zoom Vapor Pro, numero=41.0, tipo=amortiguacion, valor=5.0]
+  Tenista [nombre=Ashleigh Barty, saque=70.0, resto=80.0, ranking=1, pais=Australia] 
+   Zapatillas [modelo=Gel-Resolution 8 GS, numero=41.0, tipo=agarre, valor=4.0]
+  Tenista [nombre=Stefanos Tsitsipas, saque=55.0, resto=48.0, ranking=3, pais=Grecia] 
+   Zapatillas [modelo=Zoom GP Turbo, numero=41.0, tipo=amortiguacion, valor=6.0]
+  Tenista [nombre=Karolina Pliskova, saque=67.0, resto=68.5, ranking=3, pais=Rep Checa] 
+   Zapatillas [modelo=Court Lite, numero=41.0, tipo=agarre, valor=3.0]
+  Tenista [nombre=Elina Svitolina, saque=55.5, resto=68.5, ranking=4, pais=Ucrania] 
+   Zapatillas [modelo=UberSonic 4K, numero=41.0, tipo=amortiguacion, valor=5.5]
+  Tenista [nombre=Alexander Zverev, saque=59.0, resto=49.5, ranking=4, pais=Alemania] 
+   Zapatillas [modelo=CourtJam Bounce, numero=41.0, tipo=agarre, valor=3.5]
+  Tenista [nombre=Aryna Sabalenka, saque=67.5, resto=79.5, ranking=2, pais=Bielorrusia] 
+   Zapatillas [modelo=Court Vapor React, numero=41.0, tipo=agarre, valor=5.0]
+  Tenista [nombre=Daniil Medvedev, saque=79.0, resto=68.0, ranking=2, pais=Rusia] 
+   Zapatillas [modelo=Vapor Lite, numero=41.0, tipo=amortiguacion, valor=3.0]
+
+***** Ronda---->>>: 1
+   ### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Novak Djokovic
+    ## Tenista2 ---->>>: Daniil Medvedev
+    ## Gana este juego: Novak Djokovic con: 900.0 puntos acumulados.
+    ## Se elimina: Daniil Medvedev con: 474.0 puntos acumulados. Tenista eliminado núm: 1
+   ### Juego ----------->>>: 1
+    ## Tenista1 ---->>>: Ashleigh Barty
+    ## Tenista2 ---->>>: Aryna Sabalenka
+    ## Gana este juego: Aryna Sabalenka con: 933.75 puntos acumulados.
+    ## Se elimina: Ashleigh Barty con: 760.0 puntos acumulados. Tenista eliminado núm: 2
+   ### Juego ----------->>>: 2
+    ## Tenista1 ---->>>: Stefanos Tsitsipas
+    ## Tenista2 ---->>>: Alexander Zverev
+    ## Gana este juego: Stefanos Tsitsipas con: 948.0 puntos acumulados.
+    ## Se elimina: Alexander Zverev con: 206.5 puntos acumulados. Tenista eliminado núm: 3
+   ### Juego ----------->>>: 3
+    ## Tenista1 ---->>>: Karolina Pliskova
+    ## Tenista2 ---->>>: Elina Svitolina
+    ## Gana este juego: Elina Svitolina con: 987.25 puntos acumulados.
+    ## Se elimina: Karolina Pliskova con: 201.0 puntos acumulados. Tenista eliminado núm: 4
+
+***** Ronda---->>>: 2
+   ### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Novak Djokovic
+    ## Tenista2 ---->>>: Elina Svitolina
+    ## Gana este juego: Novak Djokovic con: 900.0 puntos acumulados.
+    ## Se elimina: Elina Svitolina con: 610.5 puntos acumulados. Tenista eliminado núm: 5
+   ### Juego ----------->>>: 1
+    ## Tenista1 ---->>>: Aryna Sabalenka
+    ## Tenista2 ---->>>: Stefanos Tsitsipas
+    ## Gana este juego: Stefanos Tsitsipas con: 660.0 puntos acumulados.
+    ## Se elimina: Aryna Sabalenka con: 337.5 puntos acumulados. Tenista eliminado núm: 6
+
+***** Ronda---->>>: 3
+   ### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Novak Djokovic
+    ## Tenista2 ---->>>: Stefanos Tsitsipas
+    ## Gana este juego: Novak Djokovic con: 900.0 puntos acumulados.
+    ## Se elimina: Stefanos Tsitsipas con: 660.0 puntos acumulados. Tenista eliminado núm: 7
+
+---->>>>  Gana la competición: Tenista [nombre=Novak Djokovic, saque=90.0, resto=80.0, ranking=1, pais=Serbia] 
+   Zapatillas [modelo=Air Zoom Vapor Pro, numero=41.0, tipo=amortiguacion, valor=5.0]  <<<<----
+
+***** Listado de eliminados: 
+  Tenista [nombre=Stefanos Tsitsipas, saque=55.0, resto=48.0, ranking=3, pais=Grecia] 
+   Zapatillas [modelo=Zoom GP Turbo, numero=41.0, tipo=amortiguacion, valor=6.0]
+  Tenista [nombre=Aryna Sabalenka, saque=67.5, resto=79.5, ranking=2, pais=Bielorrusia] 
+   Zapatillas [modelo=Court Vapor React, numero=41.0, tipo=agarre, valor=5.0]
+  Tenista [nombre=Elina Svitolina, saque=55.5, resto=68.5, ranking=4, pais=Ucrania] 
+   Zapatillas [modelo=UberSonic 4K, numero=41.0, tipo=amortiguacion, valor=5.5]
+  Tenista [nombre=Karolina Pliskova, saque=67.0, resto=68.5, ranking=3, pais=Rep Checa] 
+   Zapatillas [modelo=Court Lite, numero=41.0, tipo=agarre, valor=3.0]
+  Tenista [nombre=Alexander Zverev, saque=59.0, resto=49.5, ranking=4, pais=Alemania] 
+   Zapatillas [modelo=CourtJam Bounce, numero=41.0, tipo=agarre, valor=3.5]
+  Tenista [nombre=Ashleigh Barty, saque=70.0, resto=80.0, ranking=1, pais=Australia] 
+   Zapatillas [modelo=Gel-Resolution 8 GS, numero=41.0, tipo=agarre, valor=4.0]
+  Tenista [nombre=Daniil Medvedev, saque=79.0, resto=68.0, ranking=2, pais=Rusia] 
+   Zapatillas [modelo=Vapor Lite, numero=41.0, tipo=amortiguacion, valor=3.0]
