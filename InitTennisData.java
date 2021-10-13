@@ -9,7 +9,7 @@ public class InitTennisData {
 
     public InitTennisData(Campeonato campeonato) {
     //Descomentar la carga de datos que se quiera probar
-        cargarDatos2(campeonato);//Produce la salida Salida1_EC1
+        cargarDatos1(campeonato);//Produce la salida Salida1_EC1
         //cargarDatos2(campeonato);/Produce la salida Salida2_EC1
         
     }

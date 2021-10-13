@@ -4,7 +4,7 @@ import java.util.*;
  * Write a description of class Campeonato here.
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
- * @version (a version number or a date)
+ * @version (1.0)
  */
 public class Campeonato
 {
