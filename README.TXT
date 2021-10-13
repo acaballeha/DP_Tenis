@@ -4,7 +4,7 @@ Tell the reader (someone who does not know anything about this project)
 all they need to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE: DP_CampeonatoTenis
+PROJECT TITLE: DP_Tenis
 PURPOSE OF PROJECT:
 VERSION or DATE:
 HOW TO START THIS PROJECT: Ejecutar la funcion main de la clase 'TennisDemo'
