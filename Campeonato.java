@@ -24,30 +24,32 @@ public class Campeonato
         eliminados = new ArrayList <Tenista> ();
     }
 
-    /*
-     * @param:{Tenista}
-     * @return:{Añade el tenista t al final de Competidores}
+     /**
+     * Se añade el tenista al final de a lista Competidores
+     * @param t Tenista que se va a inscribir(Tenista)
+     * 
      */
     public void inscribir (Tenista t){
         competidores.add(t);
     }
 
     /**
-     * 
-     * @param Tenista Tenista que sera eliminado
+     * Se añade el tenista indicado por la posicion a la lista de Eliminados
+     * (al principio) y se elimina de la lista de Competidores
+     * @param i Posicion que ocupa el tenista que 
+     * se va a eliminar en Competidores(int)
      * 
      */
-    
     private void eliminar (int i){
                 
-        eliminados.add(competidores.get(i));
+        eliminados.add(0,competidores.get(i));
         competidores.remove(i);
         
     }
 
-    /*
-     * @param:{}
-     * @return:{Muestra todos los datos de todos los tenistas en Competidores}
+     /**
+     * Muestra los datos de todos los tenistas en Competidores
+     * 
      */
     private void mostrarCompetidores(){
         System.out.println("***** Listado de competidores: ");
@@ -57,9 +59,9 @@ public class Campeonato
         }
     }
 
-    /*
-     * @param:{}
-     * @return:{Muestra todos los datos de todos los tenistas en Eliminados}
+     /**
+     * Muestra los datos de todos los tenistas en Eliminados
+     * 
      */
     private void mostrarEliminados(){
         System.out.println("***** Listado de eliminados: ");
@@ -69,10 +71,10 @@ public class Campeonato
         }
     }
 
-    /*
-     * @param:{Tenista, Tenista}
-     * @return:{}
-     * Se calculan los puntos despues de el juego de tenistas t1 y t2
+     /**
+     * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
+     * @param t1 Tenista que saca primero(Tenista)
+     * @param t2 Tenista que saca segundo(Tenista)
      */
     private void juego (Tenista t1, Tenista t2){
         t1.sacar();
@@ -81,11 +83,12 @@ public class Campeonato
         t1.restar(t2);
     }
 
-    /*
-     * @param:{}
-     * @return:{}
-     * Se realizan todos los juegos correspondientes a la ronda(tantas veces como la mitad del numero de tenistas)
-     * Se muestra quien gana y pierde en cada juego, además de sus puntos acumulados.
+    /**
+     * Se realiza una ronda de juegos(la mitad del numero
+     * de tenistas Competidores). 
+     * Se elimina al jugador perdedor en cada juego.
+     * Se muestran los datos del ganador y el perdedor de cada juego.
+     * 
      */
     private void ronda(){
         int size = competidores.size();
@@ -150,9 +153,9 @@ public class Campeonato
         }
     }
 
-    /*
-     * @param:{}
-     * @return:{Pone a 0 los puntos acumulados de todos los tenistas competidores}
+    /**
+     * Pone a 0 todos los puntos acumulados de todos los tenistas Competidores.
+     * 
      */
     private void resetearPuntos(){
         for (Tenista t: competidores){
@@ -160,25 +163,25 @@ public class Campeonato
         }
     }
 
-    /*
-     * @param:{}
-     * @return:{}
-     * Inicia la competicion. 
-     * Muestra los tenistas competidores.
-     * Se ejecutan tantas rondas como hagan falta para que al final solo quede un tenista(ganador).
-     * Muestra al ganador.
-     * Muestra los tenistas eliminados.
+    /**
+     * Inicia el campeonato.
+     * Muestra el nombre del campeonato.
+     * Muestra a los tenistas Competidores.
+     * Realiza las rondas necesarias hasta que solo quede 1 tenista competidor(GANADOR).
+     * Muestra los datos del tenista ganador.
+     * Muestra los datos de los tenistas Eliminados.
+     * 
      */
     public void competicion(){
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
         mostrarCompetidores();
 
-        int i=1;
+        int rondas=1;
         while(competidores.size()>=2){
-            System.out.println("\n\n***** Ronda---->>>: "+i);
+            System.out.println("\n\n***** Ronda---->>>: "+rondas);
             ronda();
             resetearPuntos();
-            i++;
+            rondas++;
         }   
 
         System.out.print("\n\n---->>>>  Gana la competición: ");
