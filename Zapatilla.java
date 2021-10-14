@@ -1,6 +1,7 @@
 
 /**
  * Clase que define las zapatillas que usan los tenistas.
+ * Las zapatillas pueden mejorar las habilidades del tenista(como saque o resta).
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)

@@ -5,11 +5,11 @@ import java.util.Comparator;
  * @author (Javier Tello Blazquez, Miguel Izquierdo Rojo, Antonio Caballero Carrasco) 
  * @version (a version number or a date)
  */
-public class TenistaComparator implements Comparator<Tenista>
+public class TenistaComparatorPuntos implements Comparator<Tenista>
 {
     public int compare (Tenista t1, Tenista t2){
         if(t1.getPuntosAcumulados()==t2.getPuntosAcumulados()){
-            return 0;
+            return t1.getNombre().compareTo(t2.getNombre());
         }
         else if (t1.getPuntosAcumulados() > t2.getPuntosAcumulados()){
             return 1;
@@ -18,4 +18,6 @@ public class TenistaComparator implements Comparator<Tenista>
             return -1;
         }
     }  
+    
+    
 }

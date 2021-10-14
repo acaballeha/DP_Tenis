@@ -1,6 +1,7 @@
 
 /**
- * Clase que define un tenista
+ * Clase que define un tenista.
+ * Define sus posibilidades de acumular puntos con los atributos saque, resto y sus zapatillas.
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)

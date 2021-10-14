@@ -1,7 +1,8 @@
 import java.util.*;
 
 /**
- * Clase que define y maneja todo lo relativo al Campeonato
+ * Clase que define y maneja todo lo relativo al Campeonato: la lista de tenistas competidores, la lista de tenistas eliminados
+ * y como se desarrolla el juego.
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)
