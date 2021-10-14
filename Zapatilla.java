@@ -16,7 +16,10 @@ public class Zapatilla
     /**
      * Constructor for objects of class Zapatilla
      */
-
+    /*
+     * @param: { modelo de zapatilla, numero de zapatilla, tipo de zapatilla ("agarre", "amortiguacion"), valor de zapatilla}
+     * @return: {}
+     */
     public Zapatilla(String modelo, int numero, String tipo, double valor)
     {
         this.modelo=modelo;
@@ -26,21 +29,24 @@ public class Zapatilla
     }
 
     /*
-     * Modifica el modelo de la zapatilla
+     * @param: {modelo de zapatilla}
+     * @return:{}
      */
     public void setModelo(String modelo){
         this.modelo=modelo;
     }
 
     /*
-     * Modifica el numero de la zapatilla
+     * @param:{numero de zapatilla}
+     * @return:{}
      */
     public void setNumero(int numero){
         this.numero=numero;
     }
 
     /*
-     * Modifica el tipo de la zapatilla, comprobando si es un tipo válido
+     * @param:{tipo de zapatilla ("agarre", "amortiguacion")}
+     * @return:{}
      */
     public void setTipo(String tipo){
         if(tipo.equals("agarre")||tipo.equals("amortiguacion")){
@@ -52,42 +58,48 @@ public class Zapatilla
     }
 
     /*
-     * Modifica el valor 
+     * @param:{valor de zapatilla}
+     * @return:{}
      */
     public void setValor(double valor){
         this.valor=valor;
     }
 
     /*
-     *Devuelve el modelo de la zapatilla 
+     * @param:{}
+     * @return:{modelo de la zapatilla}
      */
     public String getModelo(){
         return modelo;
     }
 
     /*
-     * Devuelve el tipo de la zapatilla
-     */    
+     * @param:{}
+     * @return:{modelo de la zapatilla}
+     */
     public String getTipo(){
         return tipo;
     }
 
     /*
-     * Devuelve el valor de la zapatilla(en cuanto al tipo)
-     */    
+     * @param:{}
+     * @return:{valor de la zapatilla}
+     */
     public double getValor(){
         return valor;
     }
 
     /*
-     * Devuelve el numero de pie de la zapatilla
+     * @param:{}
+     * @return:{numero de la zapatilla}
      */
     public int getNumero(){
         return numero;
     }
 
     /*
-     * Devuelve el valor del saque de la zapatilla de forma relativa a su tipo
+     * @param:{}
+     * @return:{Si tipo="amortiguacion"->valor*2, si no ->valor}
      */
     public double calcularValorSaque(){
         if(tipo.equals ("amortiguacion")){
@@ -97,7 +109,8 @@ public class Zapatilla
     }
 
     /*
-     * Devuelve el valor del resto de la zapatilla de forma relativa a su tipo
+     * @param:{}
+     * @return:{Si tipo="agarre"->valor*1.5, si no ->valor}
      */
     public double calcularValorResto(){
         if(tipo.equals ("agarre")){
@@ -107,7 +120,8 @@ public class Zapatilla
     }
 
     /*
-     * Muestra los datos de la zapatilla
+     * @param:{}
+     * @return:{Muestra por pantalla todos los datos de zapatilla}
      */
     public void mostrar (){
         System.out.print(" Zapatilla [Modelo="+ modelo+ ", Numero=" + numero + ", Tipo="+tipo + ", Valor="+ valor + "]");

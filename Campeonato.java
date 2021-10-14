@@ -20,15 +20,16 @@ public class Campeonato
     }
 
     /*
-     * Inscribe al tenista t en la lista de competidores
+     * @param:{Tenista}
+     * @return:{Añade el tenista t al final de Competidores}
      */
     public void inscribir (Tenista t){
         competidores.add(t);
     }
 
     /*
-     * Elimina al tenista t de la lista de competidores y lo añade 
-     * al inicio de la lista de eliminados
+     * @param:{Tenista}
+     * @return:{Si existe el tenista en Competidores-> lo elimina de competidores y lo añade al principio de eliminados}
      */
     public void eliminar (Tenista t){
         //competidores.remove(t); Otra forma de hacerlo
@@ -44,10 +45,10 @@ public class Campeonato
         }
     }
 
-    /*
-     * Muestra los tenistas competidores del campeonato
+   /*
+     * @param:{}
+     * @return:{Muestra todos los datos de todos los tenistas en Competidores}
      */
-
     public void mostrarCompetidores(){
         System.out.println("***** Listado de competidores: ");
         for (Tenista t: competidores){
@@ -57,7 +58,8 @@ public class Campeonato
     }
 
     /*
-     * Muestra los tenistas eliminados del campeonato
+     * @param:{}
+     * @return:{Muestra todos los datos de todos los tenistas en Eliminados}
      */
     public void mostrarEliminados(){
         System.out.println("***** Listado de eliminados: ");
@@ -68,7 +70,9 @@ public class Campeonato
     }
 
     /*
-     * Juegan tenista t1 contra tenista t2. Primero t1 saca y t2 intenta restar, y luego al reves.
+     * @param:{Tenista, Tenista}
+     * @return:{}
+     * Se calculan los puntos despues de el juego de tenistas t1 y t2
      */
     public void juego (Tenista t1, Tenista t2){
         t1.sacar();
@@ -78,10 +82,10 @@ public class Campeonato
     }
 
     /*
-     * Juegan pares de tenistas de los dos extremos de la lista de competidores hacia el centro de esta.
-     * El jugador que consigue menos puntos queda eliminado. En caso de empate, se decide ganador al jugador con menos total
-     * en la suma de sus velocidades de resto y saque.
-     * 
+     * @param:{}
+     * @return:{}
+     * Se realizan todos los juegos correspondientes a la ronda(tantas veces como la mitad del numero de tenistas)
+     * Se muestra quien gana y pierde en cada juego, además de sus puntos acumulados.
      */
     private void ronda(){
         int size = competidores.size();
@@ -139,7 +143,8 @@ public class Campeonato
     }
     
     /*
-     * Devuelve la cantidad de puntos acumulados de todos los tenistas competidores a 0
+     * @param:{}
+     * @return:{Pone a 0 los puntos acumulados de todos los tenistas competidores}
      */
     public void resetearPuntos(){
         for (Tenista t: competidores){
@@ -147,6 +152,8 @@ public class Campeonato
         }
     }
     /*
+     * @param:{}
+     * @return:{}
      * Inicia la competicion. 
      * Muestra los tenistas competidores.
      * Se ejecutan tantas rondas como hagan falta para que al final solo quede un tenista(ganador).

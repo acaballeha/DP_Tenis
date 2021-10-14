@@ -2,7 +2,7 @@ import java.util.Comparator;
 /**
  * Write a description of class TenistaComparator here.
  * 
- * @author (your name) 
+ * @author (Javier Tello Blazquez, Miguel Izquierdo Rojo, Antonio Caballero Carrasco) 
  * @version (a version number or a date)
  */
 public class TenistaComparator implements Comparator<Tenista>
