@@ -31,7 +31,7 @@ public class Tenista
 
     }
 
-       /*
+    /*
      * @param:{nombre del tenista}
      * @return:{}
      */
@@ -46,20 +46,23 @@ public class Tenista
     public void setZapatilla(Zapatilla zapatilla){
         this.zapatilla=zapatilla;
     }
-       /*
+
+    /*
      * @param:{Velocidad de saque del tenista}
      * @return:{}
      */
     public void setSaque(double saque){
         this.saque=saque;
     }
-     /*
+
+    /*
      * @param:{Velocidad de resto del tenista}
      * @return:{}
      */
     public void setResto(double resto){
         this.resto=resto;
     }
+
     /*
      * @param:{Ranking mundial del tenista}
      * @return:{}
@@ -67,6 +70,7 @@ public class Tenista
     public void setRanking(int ranking){
         this.ranking=ranking;
     }
+
     /*
      * @param:{Puntos acumulados del tenista}
      * @return:{}
@@ -114,6 +118,7 @@ public class Tenista
     public double getSaque (){
         return saque;
     }
+
     /*
      * @param:{}
      * @return:{Zapatilla del tenista}
@@ -189,6 +194,5 @@ public class Tenista
     public void resetearPuntos(){
         puntosAcumulados=0;
     }
-
 
 }

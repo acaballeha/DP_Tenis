@@ -45,7 +45,7 @@ public class Campeonato
         }
     }
 
-   /*
+    /*
      * @param:{}
      * @return:{Muestra todos los datos de todos los tenistas en Competidores}
      */
@@ -103,17 +103,21 @@ public class Campeonato
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
+                        
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
+
                     eliminar(competidores.get(size-i-1));
                 }
                 else{
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
+                        
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
+
                     eliminar(competidores.get(size-i-1));
                 }
             }
@@ -123,25 +127,29 @@ public class Campeonato
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
+                        
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
+
                     eliminar(competidores.get(size-i-1));
                 }
                 else{
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
+                        
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
+
                     eliminar(competidores.get(size-i-1));
                 }
             }
 
         }
     }
-    
+
     /*
      * @param:{}
      * @return:{Pone a 0 los puntos acumulados de todos los tenistas competidores}
@@ -151,6 +159,7 @@ public class Campeonato
             t.resetearPuntos();
         }
     }
+
     /*
      * @param:{}
      * @return:{}
@@ -163,8 +172,8 @@ public class Campeonato
     public void competicion(){
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
         mostrarCompetidores();
-        int i=1;
 
+        int i=1;
         while(competidores.size()>=2){
             System.out.println("\n\n***** Ronda---->>>: "+i);
             ronda();
