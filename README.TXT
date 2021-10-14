@@ -11,3 +11,7 @@ HOW TO START THIS PROJECT: Ejecutar la funcion main de la clase 'TennisDemo'
 AUTHORS: Javier Tello Blázquez, Miguel Izquierdo Rojo, Antonio Caballero Carrasco
 USER INSTRUCTIONS: En la sola ejecucion de la funcion main de la clase TennisDemo
     se producen todas las salidas en el terminal.
+EXTRAS:
+    -Formato de salida idéntico al dado por el ejemplo de salida.
+    
+    -Implementacion de Comparator.
