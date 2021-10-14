@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * Write a description of class Campeonato here.
+ * Clase que define y maneja todo lo relativo al Campeonato
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)
@@ -11,7 +11,12 @@ public class Campeonato
     private String nombre;
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
-
+    
+    /**
+     * Constructor de Campeonato.
+     * @param nombre Nombre del campeonato(String)
+     * 
+     */
     public Campeonato(String nombre)
     {
         this.nombre=nombre;
@@ -32,22 +37,9 @@ public class Campeonato
      * @param Tenista Tenista que sera eliminado
      * 
      */
-    // public void eliminar (Tenista t){
-        // competidores.remove(t); Otra forma de hacerlo
-        // boolean enc=false;
-        // for(int i=0;i < competidores.size()&& !enc ;i++){
-            // if(t.equals(competidores.get(i))){
-                // enc=true;
-                // competidores.remove(i);
-            // }
-        // }
-        // if(enc){
-            // eliminados.add(0,t);
-        // }
-    // }
-    public void eliminar (int i){
-        //competidores.remove(t); Otra forma de hacerlo
-        
+    
+    private void eliminar (int i){
+                
         eliminados.add(competidores.get(i));
         competidores.remove(i);
         
@@ -57,7 +49,7 @@ public class Campeonato
      * @param:{}
      * @return:{Muestra todos los datos de todos los tenistas en Competidores}
      */
-    public void mostrarCompetidores(){
+    private void mostrarCompetidores(){
         System.out.println("***** Listado de competidores: ");
         for (Tenista t: competidores){
             t.mostrar();
@@ -69,7 +61,7 @@ public class Campeonato
      * @param:{}
      * @return:{Muestra todos los datos de todos los tenistas en Eliminados}
      */
-    public void mostrarEliminados(){
+    private void mostrarEliminados(){
         System.out.println("***** Listado de eliminados: ");
         for (Tenista t: eliminados){
             t.mostrar();
@@ -82,7 +74,7 @@ public class Campeonato
      * @return:{}
      * Se calculan los puntos despues de el juego de tenistas t1 y t2
      */
-    public void juego (Tenista t1, Tenista t2){
+    private void juego (Tenista t1, Tenista t2){
         t1.sacar();
         t2.restar(t1);
         t2.sacar();
@@ -162,7 +154,7 @@ public class Campeonato
      * @param:{}
      * @return:{Pone a 0 los puntos acumulados de todos los tenistas competidores}
      */
-    public void resetearPuntos(){
+    private void resetearPuntos(){
         for (Tenista t: competidores){
             t.resetearPuntos();
         }
