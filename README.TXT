@@ -6,7 +6,7 @@ all they need to know. The comments should usually include at least:
 
 PROJECT TITLE: DP_CampeonatoTenis
 PURPOSE OF PROJECT:
-VERSION or DATE:
+VERSION or DATE: 1.0
 HOW TO START THIS PROJECT: Ejecutar la funcion main de la clase 'TennisDemo'
 AUTHORS: Javier Tello Blázquez, Miguel Izquierdo Rojo, Antonio Caballero Carrasco
 USER INSTRUCTIONS: En la sola ejecucion de la funcion main de la clase TennisDemo
