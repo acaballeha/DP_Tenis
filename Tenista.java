@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Tenista here.
+ * Clase que define un tenista
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)
@@ -17,6 +17,14 @@ public class Tenista
 
     /**
      * Constructor for objects of class Tenista
+     * Los puntos acumulados del tenista comienzan en 0.0
+     * 
+     * @param nombre Nombre del tenista(String)
+     * @param zapatilla Zapatilla que usará el tenista(Zapatilla)
+     * @param saque Velocidad de saque del tenista(double)
+     * @param resto Velocidad de resto del tenista(double)
+     * @param ranking Posicion en el Ranking Mundial del tenista(int)
+     * @param pais Pais al que pertenece el tenista(String)
      */
 
     public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais)
@@ -31,145 +39,136 @@ public class Tenista
 
     }
 
-    /*
-     * @param:{nombre del tenista}
-     * @return:{}
+    /**
+     * 
+     * @param nombre Nombre del tenista(String)
      */
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
 
-    /* 
-     * @param:{Zapatilla del tenista}
-     * @return:{}
+    /**
+     * @param zapatilla Zapatilla que usará el tenista(Zapatilla)
      */
     public void setZapatilla(Zapatilla zapatilla){
         this.zapatilla=zapatilla;
     }
 
-    /*
-     * @param:{Velocidad de saque del tenista}
-     * @return:{}
+    /**
+     * @param saque Velocidad de saque del tenista(double)
      */
     public void setSaque(double saque){
         this.saque=saque;
     }
 
-    /*
-     * @param:{Velocidad de resto del tenista}
-     * @return:{}
+    /**
+     * @param resto Velocidad de resto del tenista(double)
      */
     public void setResto(double resto){
         this.resto=resto;
     }
 
-    /*
-     * @param:{Ranking mundial del tenista}
-     * @return:{}
+    /**
+     * @param ranking Posicion en el Ranking Mundial del tenista(int)
      */
     public void setRanking(int ranking){
         this.ranking=ranking;
     }
 
-    /*
-     * @param:{Puntos acumulados del tenista}
-     * @return:{}
+    /**
+     * @param puntosAcumulados Puntos acumulados del tenista(double)
      */
     public void setPuntosAcumulados(double puntoAcumulados){
         this.puntosAcumulados=puntosAcumulados;
     }
 
-    /*
-     * @param:{Pais del tenista}
-     * @return:{}
+    /**
+     * @param pais Pais al que pertenece el tenista(String)
      */
     public void setPais(String pais){
         this.pais=pais;
     }
 
-    /*
-     * @param:{}
-     * @return:{Pais del tenista}
+    /**
+     * @return pais Pais al que pertenece el tenista(String)
      */
     public String getPais(){
         return pais;
     } 
 
-    /*
-     * @param:{}
-     * @return:{Nombre del tenista}
+    /**
+     * @return nombre Nombre del tenista(String)
      */
     public String getNombre(){
         return nombre;
     }
 
-    /*
-     * @param:{}
-     * @return:{Velocidad de resto del tenista}
+    /**
+     * @return resto Velocidad de resto del tenista(double)
      */
     public double getResto (){
         return resto;
     }
 
-    /*
-     * @param:{}
-     * @return:{Velocidad de saque del tenista}
+    /**
+     * @return saque Velocidad de saque del tenista(double)
      */
     public double getSaque (){
         return saque;
     }
 
-    /*
-     * @param:{}
-     * @return:{Zapatilla del tenista}
+    /**
+     * @return zapatilla Zapatilla del tenista(Zapatilla)
      */
     public Zapatilla getZapatilla(){
         return zapatilla;
     }
 
-    /*
-     * @param:{}
-     * @return:{Puntos acumulados del tenista}
+    /**
+     * @return puntosAcumulados Puntos acumulados del tenista(double)
      */
     public double getPuntosAcumulados (){
         return puntosAcumulados;
     }
 
-    /*
-     * @param:{}
-     * @return:{Ranking mundial del tenista}
+    /**
+     * @return ranking Ranking mundial del tenista(int)
      */
     public int getRanking (){
         return ranking;
     }
 
-    /*
-     * @param:{}
-     * @return:{Valor de saque de las zapatillas del tenista * velocidad de saque del tenista}
+    /**
+     * Devuelve los puntos de saque resultantes de la velocidad de saque del
+     * tenista y el valor de saque de sus zapatillas.
+     * @return saque Saque del tenista(double)
      */
     public double calcularSaque(){
         return zapatilla.calcularValorSaque() * saque;
     }
 
-    /*
-     * @param:{}
-     * @return:{Valor de resto de las zapatillas del tenista * velocidad de resto del tenista}
+    /**
+     * Devuelve los puntos de resto resultantes de la velocidad de resto del
+     * tenista y el valor de resto de sus zapatillas.
+     * @return resto Resto del tenista(double)
      */
     public double calcularResto (){
         return zapatilla.calcularValorResto() * resto;
     }
 
-    /*
-     * @param:{}
-     * @return:{PuntosAcumulados+=Puntos de saque del tenista}
+    /**
+     * Suma los puntos de saque del
+     * tenista a sus puntos acumulados.
+     * 
      */
     public void sacar(){
         puntosAcumulados=puntosAcumulados + calcularSaque();
     }
 
-    /*
-     * @param:{}
-     * @return:{Si los puntos de resto del tenista > puntos de saque de t1->puntosAcumulados+=puntos de resto del tenista}
+    /**
+     * Suma los puntos de resto del
+     * tenista a sus puntos acumulados, si sus puntos de resto son mayores que los puntos de saque del contrario.
+     * @param t1 Tenista que realiza el saque(contrario)(Tenista)
      */
     public void restar(Tenista t1){
         if (calcularResto() > t1.calcularSaque()){
@@ -177,9 +176,9 @@ public class Tenista
         }
     }
 
-    /*
-     * @param:{}
-     * @return:{Muestra por pantalla los datos del tenista y de su zapatilla}
+    /**
+     * Muestra todos los datos del tenista(excepto puntos acumulados) y los de su zapatilla
+     * 
      */
     public void mostrar (){
         System.out.println("Tenista [Nombre="+ nombre+ ", Saque=" + saque 
@@ -187,9 +186,9 @@ public class Tenista
         zapatilla.mostrar();
     }
 
-    /*
-     * @param:{}
-     * @return:{puntosAcumulados=0}
+    /**
+     * Pone a 0 los puntos acumulados del tenista.
+     * 
      */
     public void resetearPuntos(){
         puntosAcumulados=0;
