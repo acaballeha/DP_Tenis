@@ -27,22 +27,30 @@ public class Campeonato
         competidores.add(t);
     }
 
-    /*
-     * @param:{Tenista}
-     * @return:{Si existe el tenista en Competidores-> lo elimina de competidores y lo añade al principio de eliminados}
+    /**
+     * 
+     * @param Tenista Tenista que sera eliminado
+     * 
      */
-    public void eliminar (Tenista t){
+    // public void eliminar (Tenista t){
+        // competidores.remove(t); Otra forma de hacerlo
+        // boolean enc=false;
+        // for(int i=0;i < competidores.size()&& !enc ;i++){
+            // if(t.equals(competidores.get(i))){
+                // enc=true;
+                // competidores.remove(i);
+            // }
+        // }
+        // if(enc){
+            // eliminados.add(0,t);
+        // }
+    // }
+    public void eliminar (int i){
         //competidores.remove(t); Otra forma de hacerlo
-        boolean enc=false;
-        for(int i=0;i < competidores.size()&& !enc ;i++){
-            if(t.equals(competidores.get(i))){
-                enc=true;
-                competidores.remove(i);
-            }
-        }
-        if(enc){
-            eliminados.add(0,t);
-        }
+        
+        eliminados.add(competidores.get(i));
+        competidores.remove(i);
+        
     }
 
     /*
@@ -108,7 +116,7 @@ public class Campeonato
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(competidores.get(size-i-1));
+                    eliminar(size-i-1);
                 }
                 else{
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
@@ -118,7 +126,7 @@ public class Campeonato
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(competidores.get(size-i-1));
+                    eliminar(size-i-1);
                 }
             }
             else{
@@ -132,7 +140,7 @@ public class Campeonato
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(competidores.get(size-i-1));
+                    eliminar(size-i-1);
                 }
                 else{
 
@@ -143,7 +151,7 @@ public class Campeonato
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(competidores.get(size-i-1));
+                    eliminar(size-i-1);
                 }
             }
 

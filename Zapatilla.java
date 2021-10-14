@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Zapatilla here.
+ * Clase que define las zapatillas que usan los tenistas.
  * 
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)
@@ -15,10 +15,10 @@ public class Zapatilla
 
     /**
      * Constructor for objects of class Zapatilla
-     */
-    /*
-     * @param: { modelo de zapatilla, numero de zapatilla, tipo de zapatilla ("agarre", "amortiguacion"), valor de zapatilla}
-     * @return: {}
+     * @param modelo nombre del modelo de la zapatilla
+     * @param numero numero de la zapatilla
+     * @param tipo tipo de la zapatilla("agarre", "amortiguacion")
+     * @param valor valor de la zapatilla
      */
     public Zapatilla(String modelo, int numero, String tipo, double valor)
     {
@@ -28,25 +28,24 @@ public class Zapatilla
         this.valor=valor;
     }
 
-    /*
-     * @param: {modelo de zapatilla}
-     * @return:{}
+    /**
+     * 
+     * @param modelo nombre del modelo de la zapatilla(String)
+     * 
      */
     public void setModelo(String modelo){
         this.modelo=modelo;
     }
 
-    /*
-     * @param:{numero de zapatilla}
-     * @return:{}
+    /** 
+     * @param numero numero de la zapatilla(int)
      */
     public void setNumero(int numero){
         this.numero=numero;
     }
 
-    /*
-     * @param:{tipo de zapatilla ("agarre", "amortiguacion")}
-     * @return:{}
+    /** 
+     * @param tipo tipo de la zapatilla("agarre", "amortiguacion")(String)
      */
     public void setTipo(String tipo){
         if(tipo.equals("agarre")||tipo.equals("amortiguacion")){
@@ -57,49 +56,46 @@ public class Zapatilla
         }
     }
 
-    /*
-     * @param:{valor de zapatilla}
-     * @return:{}
+    /**
+     * @param valor valor de la zapatilla(double)
+     * 
      */
     public void setValor(double valor){
         this.valor=valor;
     }
 
-    /*
-     * @param:{}
-     * @return:{modelo de la zapatilla}
+    /**
+     * @return modelo(String)
      */
     public String getModelo(){
         return modelo;
     }
 
-    /*
-     * @param:{}
-     * @return:{modelo de la zapatilla}
+    /**
+     * @return tipo(String)
      */
     public String getTipo(){
         return tipo;
     }
 
-    /*
-     * @param:{}
-     * @return:{valor de la zapatilla}
+    /**
+     * @return valor(double)
      */
     public double getValor(){
         return valor;
     }
 
-    /*
-     * @param:{}
-     * @return:{numero de la zapatilla}
+    /**
+     * @return numero(int)
      */
     public int getNumero(){
         return numero;
     }
 
-    /*
-     * @param:{}
-     * @return:{Si tipo="amortiguacion"->valor*2, si no ->valor}
+    /**
+     * Si las zapatillas son tipo "amortiguacion" multiplica el valor de la zaptilla por 2, si no devuelve
+     * unicamente el valor
+     * @return valorSaque(double) 
      */
     public double calcularValorSaque(){
         if(tipo.equals ("amortiguacion")){
@@ -108,9 +104,10 @@ public class Zapatilla
         return valor;
     }
 
-    /*
-     * @param:{}
-     * @return:{Si tipo="agarre"->valor*1.5, si no ->valor}
+    /**
+     * Si las zapatillas son tipo "agarre" multiplica el valor de la zaptilla por 1.5, si no devuelve
+     * unicamente el valor
+     * @return valorResto(double) 
      */
     public double calcularValorResto(){
         if(tipo.equals ("agarre")){
@@ -119,9 +116,10 @@ public class Zapatilla
         return valor;
     }
 
-    /*
-     * @param:{}
-     * @return:{Muestra por pantalla todos los datos de zapatilla}
+    /**
+     * 
+     * Muestra toda la informacion de la zapatilla
+     *  
      */
     public void mostrar (){
         System.out.print(" Zapatilla [Modelo="+ modelo+ ", Numero=" + numero + ", Tipo="+tipo + ", Valor="+ valor + "]");
