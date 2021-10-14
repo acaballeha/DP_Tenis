@@ -26,6 +26,39 @@ public class Zapatilla
     }
 
     /*
+     * Modifica el modelo de la zapatilla
+     */
+    public void setModelo(String modelo){
+        this.modelo=modelo;
+    }
+
+    /*
+     * Modifica el numero de la zapatilla
+     */
+    public void setNumero(int numero){
+        this.numero=numero;
+    }
+
+    /*
+     * Modifica el tipo de la zapatilla, comprobando si es un tipo válido
+     */
+    public void setTipo(String tipo){
+        if(tipo.equals("agarre")||tipo.equals("amortiguacion")){
+            this.tipo=tipo;
+        }
+        else{
+            System.out.println("El tipo no es correcto");
+        }
+    }
+
+    /*
+     * Modifica el valor 
+     */
+    public void setValor(double valor){
+        this.valor=valor;
+    }
+
+    /*
      *Devuelve el modelo de la zapatilla 
      */
     public String getModelo(){
@@ -49,7 +82,7 @@ public class Zapatilla
     /*
      * Devuelve el numero de pie de la zapatilla
      */
-    public int numero(){
+    public int getNumero(){
         return numero;
     }
 
@@ -80,5 +113,4 @@ public class Zapatilla
         System.out.print(" Zapatilla [Modelo="+ modelo+ ", Numero=" + numero + ", Tipo="+tipo + ", Valor="+ valor + "]");
     }
 }
-
 

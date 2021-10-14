@@ -44,7 +44,7 @@ public class Tenista
     public void setZapatilla(Zapatilla zapatilla){
         this.zapatilla=zapatilla;
     }
-
+    
     /*
      * Modifica el pais del tenista
      */
