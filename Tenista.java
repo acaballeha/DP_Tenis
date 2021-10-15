@@ -79,7 +79,7 @@ public class Tenista
     /**
      * @param puntosAcumulados Puntos acumulados del tenista(double)
      */
-    public void setPuntosAcumulados(double puntoAcumulados){
+    public void setPuntosAcumulados(double puntosAcumulados){
         this.puntosAcumulados=puntosAcumulados;
     }
 
