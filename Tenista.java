@@ -15,6 +15,8 @@ public class Tenista
     private int ranking;
     private String pais;
     private double puntosAcumulados;
+    private int numeroPie;
+    private Raqueta raqueta;
 
     /**
      * Constructor for objects of class Tenista
@@ -28,7 +30,7 @@ public class Tenista
      * @param pais Pais al que pertenece el tenista(String)
      */
 
-    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais)
+    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, int numeroPie, Raqueta raqueta)
     {
         this.nombre= nombre;
         this.zapatilla=zapatilla;
@@ -37,7 +39,16 @@ public class Tenista
         this.ranking=ranking;
         this.pais=pais;
         puntosAcumulados=0.0;
+        this.numeroPie=numeroPie;
+        this.raqueta = raqueta;
 
+    }
+    public void setNumeroPie (int numeroPie){
+        this.numeroPie=numeroPie;
+    }
+    
+    public int getNumeroPie (){
+        return numeroPie;
     }
 
     /**
