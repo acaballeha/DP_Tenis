@@ -72,18 +72,6 @@ public class Campeonato
         }
     }
 
-     /**
-     * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
-     * @param t1 Tenista que saca primero(Tenista)
-     * @param t2 Tenista que saca segundo(Tenista)
-     */
-    private void juego (Tenista t1, Tenista t2){
-        t1.sacar();
-        t2.restar(t1);
-        t2.sacar();
-        t1.restar(t2);
-    }
-
     /**
      * Se realiza una ronda de juegos(la mitad del numero
      * de tenistas Competidores). 
@@ -98,7 +86,7 @@ public class Campeonato
             System.out.println(" ### Juego ----------->>>: "+i);
             System.out.println("  ## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
             System.out.println("  ## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
-            juego (competidores.get(i), competidores.get(size-i-1));
+            competidores.get(i).juego(competidores.get(size-i-1));
             int orden= eliminados.size()+1;
             if (competidores.get(i).getPuntosAcumulados() == competidores.get(size-i-1).getPuntosAcumulados()){
                 if(competidores.get(i).getSaque()+competidores.get(i).getResto() > 

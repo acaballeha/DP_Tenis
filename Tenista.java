@@ -195,4 +195,14 @@ public class Tenista
         puntosAcumulados=0;
     }
 
+    /**
+     * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
+     * @param t2 Tenista que saca segundo(Tenista)
+     */
+    public void juego (Tenista t2){
+        sacar();
+        t2.restar(this);
+        t2.sacar();
+        restar(t2);
+    }
 }
