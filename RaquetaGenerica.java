@@ -8,24 +8,27 @@
 public class RaquetaGenerica implements Raqueta
 {
     // instance variables - replace the example below with your own
-    private int peso;
-    private int longitud;
-    private int tamanoDeLaCabeza;
-    private String estiloEncordado;
-
+    private String modelo;
+    private float peso;
+    private float longitud;
+    private float tamanoDeLaCabeza;
+    private Encordado encordado;
     /**
      * Constructor for objects of class RaquetaGenerica
      */
-    public RaquetaGenerica(int peso, int longitud, int tamanoDeLaCabeza, String estiloEncordado)
+    public RaquetaGenerica(String modelo, int peso,
+    int longitud, int tamanoDeLaCabeza, String encordado)
     {
-        peso = 0;
-        longitud = 0;
-        tamanoDeLaCabeza = 0;
-        estiloEncordado = " ";
+        this.modelo=modelo;
+        this.peso=peso;
+        this.longitud=longitud;
+        this.tamanoDeLaCabeza=tamanoDeLaCabeza;
+        this.encordado=Encordado.valueOf(encordado);
+        
         
     }
     
-    }
+}
     
     
 
