@@ -15,8 +15,9 @@ public class Tenista
     private int ranking;
     private String pais;
     private double puntosAcumulados;
-    private int numeroPie;
+    private double numeroPie;
     private Raqueta raqueta;
+    
 
     /**
      * Constructor for objects of class Tenista
@@ -30,7 +31,7 @@ public class Tenista
      * @param pais Pais al que pertenece el tenista(String)
      */
 
-    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, int numeroPie, Raqueta raqueta)
+    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, double numeroPie, Raqueta raqueta)
     {
         this.nombre= nombre;
         this.zapatilla=zapatilla;
@@ -47,7 +48,7 @@ public class Tenista
         this.numeroPie=numeroPie;
     }
     
-    public int getNumeroPie (){
+    public double getNumeroPie (){
         return numeroPie;
     }
 
@@ -212,7 +213,12 @@ public class Tenista
     public void resetearPuntos(){
         puntosAcumulados=0;
     }
-
+    
+    //#########################ddd
+    
+    public void elegirZapatillas(Campeonato c){
+        boolean enc = false;
+    }
     /**
      * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
      * @param t2 Tenista que saca segundo(Tenista)

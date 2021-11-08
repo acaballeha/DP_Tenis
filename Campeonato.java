@@ -12,6 +12,7 @@ public class Campeonato
     private String nombre;
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
+    private ArrayList< Zapatilla> zapatillasCampeonato;
     
     /**
      * Constructor de Campeonato.

@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Write a description of class RaquetaGenerica here.
  * 
@@ -8,11 +8,16 @@
 public abstract class RaquetaGenerica implements Raqueta
 {
     // instance variables - replace the example below with your own
-
-    double [][] potencia = {{680,690,700,720,740}, {2,4,6,8,10}};
-    double [][] control = {{600,630,650,680,720}, {10,8,6,4,2}};
-    double [][] velocidad = {{220,260,300,320,340}, {10,8,6,4,2}};
-
+    Map <Double, Double> potencia = new HashMap<>();
+    potencia.put(new Double(680),new Double(2));
+    potencia.put(690,4);
+    potencia.put(700,6);
+    potencia.put(720,8);
+    potencia.put(740,10);
+    Map <Double, Double> control = new HashMap<>();
+    Map <Double, Double> velocidad = new HashMap<>();
+    
+    
     private String modelo;
     private double peso;
     private double longitud;
@@ -32,6 +37,8 @@ public abstract class RaquetaGenerica implements Raqueta
 
     }
 
+    
+    
     public void setModelo (String modelo){
         this.modelo=modelo;
     }
@@ -85,29 +92,17 @@ public abstract class RaquetaGenerica implements Raqueta
     }
 
     public double calcularPotencia(){
-        for(int i=0;i<potencia.length/2;i++){
-            if(longitud==potencia[0][i]){
-                return potencia[1][i];
-            }
-        }
+        
         return 0.0;
     }
     
         public double calcularControl(){
-        for(int i=0;i<control.length/2;i++){
-            if(tamanoDeLaCabeza==control[0][i]){
-                return control[1][i];
-            }
-        }
+        
         return 0.0;
     }
     
         public double calcularVelocidad(){
-        for(int i=0;i<velocidad.length/2;i++){
-            if(peso==velocidad[0][i]){
-                return velocidad[1][i];
-            }
-        }
+        
         return 0.0;
     }
 }
