@@ -30,16 +30,24 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         return multiControl;
     }
     
+    public void setMultiPotencia(double multiPotencia){
+        this.multiPotencia=multiPotencia;
+    }
+    
+    public void setMultiControl(double multiControl){
+        this.multiControl=multiControl;
+    }
     
     @Override
     public double calcularPotencia(){
-        return super.calcularPotencia() * super.getMultPotencia();
+        return super.calcularPotencia() * getMultPotencia();
     }
-
-    @Override
-    public double calcularVelocidad(){
-        return super.calcularVelocidad() * 1.5;
+    
+        @Override
+    public double calcularControl(){
+        return super.calcularControl() * getMultControl();
     }
+    
 
     @Override
     public void mostrar(){
