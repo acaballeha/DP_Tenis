@@ -150,13 +150,17 @@ public class Tenista
         return ranking;
     }
 
+    //######################################MOdificado######################
     /**
      * Devuelve los puntos de saque resultantes de la velocidad de saque del
      * tenista y el valor de saque de sus zapatillas.
      * @return saque Saque del tenista(double)
      */
     public double calcularSaque(){
-        return zapatilla.calcularValorSaque() * saque;
+        return zapatilla.calcularValorSaque() 
+        * raqueta.calcularPotencia() 
+        * raqueta.calcularVelocidad() 
+        * saque;
     }
 
     /**
@@ -165,7 +169,10 @@ public class Tenista
      * @return resto Resto del tenista(double)
      */
     public double calcularResto (){
-        return zapatilla.calcularValorResto() * resto;
+        return zapatilla.calcularValorResto() 
+        * raqueta.calcularControl() 
+        * raqueta.calcularVelocidad() 
+        * resto;
     }
 
     /**
