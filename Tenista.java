@@ -216,8 +216,9 @@ public class Tenista
     
     //#########################ddd
     
-    public Zapatilla elegirZapatillas(HashSet <Zapatilla> zapatillas){
-        Zapatilla z = new aº
+    public void elegirZapatillas(HashSet <Zapatilla> zapatillas){
+        Zapatilla z;
+    
     }
     /**
      * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
