@@ -1,4 +1,4 @@
-
+import java.util.HashSet;
 /**
  * Clase que define un tenista.
  * Define sus posibilidades de acumular puntos con los atributos saque, resto y sus zapatillas.
@@ -216,8 +216,8 @@ public class Tenista
     
     //#########################ddd
     
-    public void elegirZapatillas(){
-    
+    public Zapatilla elegirZapatillas(HashSet <Zapatilla> zapatillas){
+        Zapatilla z = new aº
     }
     /**
      * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
