@@ -6,18 +6,10 @@ import java.util.*;
  * @version (a version number or a date)
  */
 public abstract class RaquetaGenerica implements Raqueta
-{
-    // instance variables - replace the example below with your own
-    Map <Double, Double> potencia = new HashMap<>();
-    potencia.put(new Double(680),new Double(2));
-    potencia.put(690,4);
-    potencia.put(700,6);
-    potencia.put(720,8);
-    potencia.put(740,10);
-    Map <Double, Double> control = new HashMap<>();
-    Map <Double, Double> velocidad = new HashMap<>();
-    
-    
+{    
+    Potencia potencia;
+    Control control;
+    Velocidad velocidad;
     private String modelo;
     private double peso;
     private double longitud;
@@ -29,6 +21,9 @@ public abstract class RaquetaGenerica implements Raqueta
     public RaquetaGenerica(String modelo, double peso,
     double longitud, double tamanoDeLaCabeza, String encordado)
     {
+        potencia = new Potencia();
+        control = new Control();
+        velocidad = new Velocidad();
         this.modelo=modelo;
         this.peso=peso;
         this.longitud=longitud;
@@ -92,18 +87,19 @@ public abstract class RaquetaGenerica implements Raqueta
     }
 
     public double calcularPotencia(){
+        return potencia.getPotencia( new Double (longitud));
         
-        return 0.0;
+        
     }
     
         public double calcularControl(){
+        return control.getControl( new Double (tamanoDeLaCabeza));
         
-        return 0.0;
     }
     
         public double calcularVelocidad(){
+        return velocidad.getVelocidad( new Double (peso));
         
-        return 0.0;
     }
 }
 

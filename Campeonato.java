@@ -13,6 +13,7 @@ public class Campeonato
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
     private ArrayList< Zapatilla> zapatillasCampeonato;
+    private HashSet < Raqueta> raquetasCampeonato;// se compara con compareTo
     
     /**
      * Constructor de Campeonato.
@@ -24,6 +25,9 @@ public class Campeonato
         this.nombre=nombre;
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
+        zapatillasCampeonato= new ArrayList <> ();
+        raquetasCampeonato= new HashSet <> ();
+        
     }
 
      /**

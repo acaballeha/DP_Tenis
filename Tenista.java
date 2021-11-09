@@ -216,8 +216,8 @@ public class Tenista
     
     //#########################ddd
     
-    public void elegirZapatillas(Campeonato c){
-        boolean enc = false;
+    public void elegirZapatillas(){
+    
     }
     /**
      * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
