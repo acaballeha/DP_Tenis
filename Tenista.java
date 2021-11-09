@@ -1,4 +1,5 @@
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Clase que define un tenista.
  * Define sus posibilidades de acumular puntos con los atributos saque, resto y sus zapatillas.
@@ -216,8 +217,16 @@ public class Tenista
     
     //#########################ddd
     
-    public void elegirZapatillas(HashSet <Zapatilla> zapatillas){
-        Zapatilla z;
+    public Zapatilla elegirZapatillas(ArrayList <Zapatilla> zapatillas){
+        Zapatilla z = null;
+        Iterator <Zapatilla> it =  zapatillas.iterator();
+        while (it.hasNext()){
+            z= it.next();
+            if(numeroPie == z.getNumero()){
+                return z;
+            }
+        }
+        return z;
     
     }
     /**
