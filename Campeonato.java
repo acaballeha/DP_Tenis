@@ -13,8 +13,8 @@ public class Campeonato
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
     private ArrayList< Zapatilla> zapatillasCampeonato;
-    private HashSet < Raqueta> raquetasCampeonato;// se compara con compareTo
-    
+    private Set <Raqueta> raquetasCampeonato;// se compara con compareTo
+
     /**
      * Constructor de Campeonato.
      * @param nombre Nombre del campeonato(String)
@@ -26,16 +26,67 @@ public class Campeonato
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
         zapatillasCampeonato= new ArrayList <> ();
-        raquetasCampeonato= new HashSet <> ();
+        //  raquetasCampeonato = new TreeSet <> 
+        //  (new RaquetaComparatorPotencia <Raqueta>());
+    }
+
+    public void insertarZapatilla(Zapatilla z){
+        zapatillasCampeonato.add(z);
+    }
+
+    public void eliminarZapatilla(Zapatilla z){
+        Zapatilla aux;
+        boolean enc = false;
+        if(z != null){
+            Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
+            while (it.hasNext()){
+                aux= it.next();
+                if(aux.getNumero() == z.getNumero()){
+                    enc = true;
+                    it.remove();
+                }
+            }
+
+        }
         
     }
 
-     /**
+    public void ordenarZapatillas(){
+        Collections.sort(zapatillasCampeonato, new ZapatillaComparatorNumero());
+    }
+    
+    public void asignarZapatillas(){
+        ordenarZapatillas();
+        for(Tenista t : competidores){
+            eliminarZapatilla(t.elegirZapatillas(zapatillasCampeonato));
+        }
+    }
+
+    public void insertarRaqueta(Raqueta r){
+
+        if(!raquetasCampeonato.add(r)){
+            System.out.println("Esta raqueta ya está registrada");
+        }
+    }
+    
+    public void asignarRaquetas(){
+        if(competidores.size() <= raquetasCampeonato.size()){
+            Iterator <Raqueta> it =  raquetasCampeonato.iterator();
+            Raqueta aux;
+            for (Tenista t : competidores){
+                aux = it.next();
+                t.setRaqueta(aux);
+            }
+        
+        }
+    }
+
+    /**
      * Se añade el tenista al final de a lista Competidores
      * @param t Tenista que se va a inscribir(Tenista)
      * 
      */
-    public void inscribir (Tenista t){
+    public void inscribirTenista (Tenista t){
         competidores.add(t);
     }
 
@@ -46,14 +97,14 @@ public class Campeonato
      * se va a eliminar en Competidores(int)
      * 
      */
-    private void eliminar (int i){
-                
+    private void eliminarTenista (int i){
+
         eliminados.add(0,competidores.get(i));
         competidores.remove(i);
-        
+
     }
 
-     /**
+    /**
      * Muestra los datos de todos los tenistas en Competidores
      * 
      */
@@ -65,7 +116,7 @@ public class Campeonato
         }
     }
 
-     /**
+    /**
      * Muestra los datos de todos los tenistas en Eliminados
      * 
      */
@@ -100,22 +151,22 @@ public class Campeonato
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
-                        
+
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(size-i-1);
+                    eliminarTenista(size-i-1);
                 }
                 else{
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
-                        
+
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(size-i-1);
+                    eliminarTenista(size-i-1);
                 }
             }
             else{
@@ -124,23 +175,23 @@ public class Campeonato
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
-                        
+
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(size-i-1);
+                    eliminarTenista(size-i-1);
                 }
                 else{
 
                     System.out.println("  ## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
-                        
+
                     System.out.println("  ## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado numero "+ orden);
 
-                    eliminar(size-i-1);
+                    eliminarTenista(size-i-1);
                 }
             }
 

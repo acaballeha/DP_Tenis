@@ -7,6 +7,7 @@
  */
 
 public interface Zapatilla {
+
     public void setModelo(String modelo);
 
     public void setNumero(int numero);

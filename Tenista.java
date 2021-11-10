@@ -18,7 +18,6 @@ public class Tenista
     private double puntosAcumulados;
     private double numeroPie;
     private Raqueta raqueta;
-    
 
     /**
      * Constructor for objects of class Tenista
@@ -32,7 +31,7 @@ public class Tenista
      * @param pais Pais al que pertenece el tenista(String)
      */
 
-    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, double numeroPie, Raqueta raqueta)
+    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, double numeroPie)
     {
         this.nombre= nombre;
         this.zapatilla=zapatilla;
@@ -42,13 +41,14 @@ public class Tenista
         this.pais=pais;
         puntosAcumulados=0.0;
         this.numeroPie=numeroPie;
-        this.raqueta = raqueta;
+        this.raqueta = null;
 
     }
+
     public void setNumeroPie (int numeroPie){
         this.numeroPie=numeroPie;
     }
-    
+
     public double getNumeroPie (){
         return numeroPie;
     }
@@ -102,7 +102,11 @@ public class Tenista
     public void setPais(String pais){
         this.pais=pais;
     }
-
+    //##############################
+        public void setRaqueta(Raqueta r){
+        this.raqueta=r;;
+    }
+    
     /**
      * @return pais Pais al que pertenece el tenista(String)
      */
@@ -150,6 +154,10 @@ public class Tenista
      */
     public int getRanking (){
         return ranking;
+    }
+    
+    public Raqueta getRaqueta(){
+        return raqueta;
     }
 
     //######################################MOdificado######################
@@ -214,9 +222,9 @@ public class Tenista
     public void resetearPuntos(){
         puntosAcumulados=0;
     }
-    
+
     //#########################ddd
-    
+
     public Zapatilla elegirZapatillas(ArrayList <Zapatilla> zapatillas){
         Zapatilla z = null;
         Iterator <Zapatilla> it =  zapatillas.iterator();
@@ -227,8 +235,9 @@ public class Tenista
             }
         }
         return z;
-    
+
     }
+
     /**
      * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
      * @param t2 Tenista que saca segundo(Tenista)
