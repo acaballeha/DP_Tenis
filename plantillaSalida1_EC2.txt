@@ -1,0 +1,131 @@
+***** Inicio del campeonato: Campeonato de Extremadura *****
+
+***** Asignando raquetas a tenistas *****
+   ** RaquetaEquilibrada(MultiplicadorDePotencia:6.0)(MultiplicadorDeControl:2.0)
+	[modelo=Head Graphene
+	longitud: 690.0,potencia asociada: 24.0
+	tamaño: 630.0,control asociado: 16.0
+	peso: 320.0,velocidad Asociada: 4.0] asignada a -->> Novak Djokovic
+   ** RaquetaEquilibrada(MultiplicadorDePotencia:8.0)(MultiplicadorDeControl:1.0)
+	[modelo=Class 100L
+	longitud: 680.0,potencia asociada: 16.0
+	tamaño: 720.0,control asociado: 2.0
+	peso: 320.0,velocidad Asociada: 4.0] asignada a -->> Ashleigh Barty
+   ** RaquetaEquilibrada(MultiplicadorDePotencia:6.0)(MultiplicadorDeControl:3.0)
+	[modelo=Prince TT Bandit
+	longitud: 680.0,potencia asociada: 12.0
+	tamaño: 680.0,control asociado: 12.0
+	peso: 220.0,velocidad Asociada: 10.0] asignada a -->> Stefanos Tsitsipas
+   ** RaquetaPotente(Encordado:Abierto)(MultiplicadorDePotencia:2.0)(MultiplicadorDeControl:2.2)
+	[modelo=Dunlop CX200
+	longitud: 700.0,potencia asociada: 12.0
+	tamaño: 630.0,control asociado: 8.0
+	peso: 300.0,velocidad Asociada: 9.0] asignada a -->> Karolina Pliskova
+   ** RaquetaEquilibrada(MultiplicadorDePotencia:2.5)(MultiplicadorDeControl:4.0)
+	[modelo=Prince Hornet 100
+	longitud: 690.0,potencia asociada: 10.0
+	tamaño: 600.0,control asociado: 40.0
+	peso: 220.0,velocidad Asociada: 10.0] asignada a -->> Elina Svitolina
+   ** RaquetaControlada(Encordado:Cerrado)(MultiplicadorDePotencia:1.8)(MultiplicadorDeControl:2.5)
+	[modelo=Babolat Drive
+	longitud: 740.0,potencia asociada: 10.0
+	tamaño: 600.0,control asociado: 25.0
+	peso: 340.0,velocidad Asociada: 2.4] asignada a -->> Alexander Zverev
+   ** RaquetaPotente(Encordado:Abierto)(MultiplicadorDePotencia:2.0)(MultiplicadorDeControl:2.2)
+	[modelo=Wilson Blade
+	longitud: 690.0,potencia asociada: 8.0
+	tamaño: 680.0,control asociado: 4.0
+	peso: 260.0,velocidad Asociada: 12.0] asignada a -->> Aryna Sabalenka
+   ** RaquetaControlada(Encordado:Abierto)(MultiplicadorDePotencia:2.0)(MultiplicadorDeControl:2.2)
+	[modelo=Wilson Silver
+	longitud: 690.0,potencia asociada: 4.0
+	tamaño: 650.0,control asociado: 13.200000000000001
+	peso: 220.0,velocidad Asociada: 12.0] asignada a -->> Daniil Medvedev
+
+***** Listado de competidores: 
+    ** Tenista [nombre=Novak Djokovic, saque=90.0, resto=80.0, ranking=1, pais=Serbia, número pie=42.0] 
+       ZapatillasAmortiguadas [modelo=Air Zoom Vapor Pro, número=42.0, valor=5.0]
+    ** Tenista [nombre=Ashleigh Barty, saque=70.0, resto=80.0, ranking=1, pais=Australia, número pie=40.0] 
+       ZapatillasConAgarre [modelo=Court Vapor React, número=40.0, valor=5.0]
+    ** Tenista [nombre=Stefanos Tsitsipas, saque=55.0, resto=48.0, ranking=3, pais=Grecia, número pie=43.0] 
+       ZapatillasAmortiguadas [modelo=Zoom GP Turbo, número=43.0, valor=3.5]
+    ** Tenista [nombre=Karolina Pliskova, saque=67.0, resto=68.5, ranking=3, pais=Rep Checa, número pie=39.0] 
+       ZapatillasConAgarre [modelo=Court Lite, número=39.0, valor=3.0]
+    ** Tenista [nombre=Elina Svitolina, saque=55.5, resto=68.5, ranking=4, pais=Ucrania, número pie=40.0] 
+       ZapatillasAmortiguadas [modelo=UberSonic 4K, número=40.0, valor=6.0]
+    ** Tenista [nombre=Alexander Zverev, saque=59.0, resto=49.5, ranking=4, pais=Alemania, número pie=42.0] 
+       ZapatillasConAgarre [modelo=CourtJam Bounce, número=42.0, valor=3.5]
+    ** Tenista [nombre=Aryna Sabalenka, saque=67.5, resto=79.5, ranking=2, pais=Bielorrusia, número pie=40.0] 
+       ZapatillasConAgarre [modelo=Gel-Resolution 8 GS, número=40.0, valor=4.0]
+    ** Tenista [nombre=Daniil Medvedev, saque=79.0, resto=68.0, ranking=2, pais=Rusia, número pie=42.0] 
+       ZapatillasAmortiguadas [modelo=Vapor Lite, número=42.0, valor=3.0]
+
+***** Ronda---->>>: 1
+  #### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Novak Djokovic
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=K-Swiss Express, número=42.0, valor=3.0]
+    ## Tenista2 ---->>>: Daniil Medvedev
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=Babolat Jet Tere, número=42.0, valor=5.5]
+    ## Gana este juego: Daniil Medvedev con: 122063.04000000001 puntos acumulados.
+    ## Se elimina: Novak Djokovic con: 55987.2 puntos acumulados. Tenista eliminado núm: 1
+  #### Juego ----------->>>: 1
+    ## Tenista1 ---->>>: Ashleigh Barty
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=Lotto Space, número=40.0, valor=5.0]
+    ## Tenista2 ---->>>: Aryna Sabalenka
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=Lotto Mirage, número=40.0, valor=6.0]
+    ## Gana este juego: Aryna Sabalenka con: 83980.79999999999 puntos acumulados.
+    ## Se elimina: Ashleigh Barty con: 48384.0 puntos acumulados. Tenista eliminado núm: 2
+  #### Juego ----------->>>: 2
+    ## Tenista1 ---->>>: Stefanos Tsitsipas
+    ## Tenista2 ---->>>: Alexander Zverev
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=Wilson Rush, número=42.0, valor=3.5]
+    ## Gana este juego: Stefanos Tsitsipas con: 76104.0 puntos acumulados.
+    ## Se elimina: Alexander Zverev con: 10704.960000000001 puntos acumulados. Tenista eliminado núm: 3
+  #### Juego ----------->>>: 3
+    ## Tenista1 ---->>>: Karolina Pliskova
+    ## Tenista2 ---->>>: Elina Svitolina
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=K-Swiss Hypercourt, número=40.0, valor=5.0]
+    ## Gana este juego: Elina Svitolina con: 238040.0 puntos acumulados.
+    ## Se elimina: Karolina Pliskova con: 26049.6 puntos acumulados. Tenista eliminado núm: 4
+
+***** Ronda---->>>: 2
+  #### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Daniil Medvedev
+       Zapatillas asignadas:     ZapatillasConAgarre [modelo=Asics Gel-Game, número=42.0, valor=4.5]
+    ## Tenista2 ---->>>: Elina Svitolina
+       Zapatillas asignadas:     ZapatillasAmortiguadas [modelo=Head Revolt, número=40.0, valor=5.0]
+    ## Gana este juego: Elina Svitolina con: 238040.0 puntos acumulados.
+    ## Se elimina: Daniil Medvedev con: 127596.38400000002 puntos acumulados. Tenista eliminado núm: 5
+  #### Juego ----------->>>: 1
+    ## Tenista1 ---->>>: Aryna Sabalenka
+       Zapatillas asignadas:     ZapatillasConAgarre [modelo=Joma Slam, número=40.0, valor=3.0]
+    ## Tenista2 ---->>>: Stefanos Tsitsipas
+    ## Gana este juego: Stefanos Tsitsipas con: 76104.0 puntos acumulados.
+    ## Se elimina: Aryna Sabalenka con: 23327.999999999996 puntos acumulados. Tenista eliminado núm: 6
+
+***** Ronda---->>>: 3
+  #### Juego ----------->>>: 0
+    ## Tenista1 ---->>>: Elina Svitolina
+       Zapatillas asignadas:     ZapatillasConAgarre [modelo=Adidas Gamecourt, número=40.0, valor=5.0]
+    ## Tenista2 ---->>>: Stefanos Tsitsipas
+    ## Gana este juego: Elina Svitolina con: 336070.0 puntos acumulados.
+    ## Se elimina: Stefanos Tsitsipas con: 49896.0 puntos acumulados. Tenista eliminado núm: 7
+
+---->>>>  Gana la competición:   ** Tenista [nombre=Elina Svitolina, saque=55.5, resto=68.5, ranking=4, pais=Ucrania, número pie=40.0] 
+       ZapatillasConAgarre [modelo=Adidas Gamecourt, número=40.0, valor=5.0]  <<<<----
+
+***** Listado de eliminados: 
+    ** Tenista [nombre=Stefanos Tsitsipas, saque=55.0, resto=48.0, ranking=3, pais=Grecia, número pie=43.0] 
+       ZapatillasAmortiguadas [modelo=Zoom GP Turbo, número=43.0, valor=3.5]
+    ** Tenista [nombre=Aryna Sabalenka, saque=67.5, resto=79.5, ranking=2, pais=Bielorrusia, número pie=40.0] 
+       ZapatillasConAgarre [modelo=Joma Slam, número=40.0, valor=3.0]
+    ** Tenista [nombre=Daniil Medvedev, saque=79.0, resto=68.0, ranking=2, pais=Rusia, número pie=42.0] 
+       ZapatillasConAgarre [modelo=Asics Gel-Game, número=42.0, valor=4.5]
+    ** Tenista [nombre=Karolina Pliskova, saque=67.0, resto=68.5, ranking=3, pais=Rep Checa, número pie=39.0] 
+       ZapatillasConAgarre [modelo=Court Lite, número=39.0, valor=3.0]
+    ** Tenista [nombre=Alexander Zverev, saque=59.0, resto=49.5, ranking=4, pais=Alemania, número pie=42.0] 
+       ZapatillasAmortiguadas [modelo=Wilson Rush, número=42.0, valor=3.5]
+    ** Tenista [nombre=Ashleigh Barty, saque=70.0, resto=80.0, ranking=1, pais=Australia, número pie=40.0] 
+       ZapatillasAmortiguadas [modelo=Lotto Space, número=40.0, valor=5.0]
+    ** Tenista [nombre=Novak Djokovic, saque=90.0, resto=80.0, ranking=1, pais=Serbia, número pie=42.0] 
+       ZapatillasAmortiguadas [modelo=K-Swiss Express, número=42.0, valor=3.0]

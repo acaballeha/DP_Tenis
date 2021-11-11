@@ -1,4 +1,4 @@
-import java.util.*;
+
 /**
  * Write a description of class RaquetaGenerica here.
  * 
@@ -7,9 +7,6 @@ import java.util.*;
  */
 public abstract class RaquetaGenerica implements Raqueta
 {    
-    Potencia potencia;
-    Control control;
-    Velocidad velocidad;
     private String modelo;
     private double peso;
     private double longitud;
@@ -21,9 +18,6 @@ public abstract class RaquetaGenerica implements Raqueta
     public RaquetaGenerica(String modelo, double peso,
     double longitud, double tamanoDeLaCabeza, String encordado)
     {
-        potencia = new Potencia();
-        control = new Control();
-        velocidad = new Velocidad();
         this.modelo=modelo;
         this.peso=peso;
         this.longitud=longitud;
@@ -32,7 +26,6 @@ public abstract class RaquetaGenerica implements Raqueta
 
     }
 
-    
     
     public void setModelo (String modelo){
         this.modelo=modelo;
@@ -73,33 +66,35 @@ public abstract class RaquetaGenerica implements Raqueta
     public String getEncordado (){
         return encordado.getNombre();
     }
-    
+
     public double getMultPotencia(){
         return encordado.getMultPotencia();
     }
-    
-        public double getMultControl(){
+
+    public double getMultControl(){
         return encordado.getMultControl();
     }
+
     public void mostrar(){
         System.out.println();
 
     }
 
     public double calcularPotencia(){
-        return potencia.getPotencia( new Double (longitud));
-        
-        
+        Potencia p = new Potencia ();
+        return p.getPotencia( new Double (longitud));
+
     }
-    
-        public double calcularControl(){
-        return control.getControl( new Double (tamanoDeLaCabeza));
-        
+    public double calcularControl(){
+        Control c = new Control ();
+        return c.getControl( new Double (tamanoDeLaCabeza));
+
     }
-    
-        public double calcularVelocidad(){
-        return velocidad.getVelocidad( new Double (peso));
-        
+
+    public double calcularVelocidad(){
+        Velocidad v = new Velocidad();    
+        return v.getVelocidad( new Double (peso));
+
     }
 }
 

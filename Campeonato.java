@@ -219,7 +219,10 @@ public class Campeonato
     public void competicion(){
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
         mostrarCompetidores();
-
+        
+        asignarZapatillas();
+        asignarRaquetas();
+        
         int rondas=1;
         while(competidores.size()>=2){
             System.out.println("\n\n***** Ronda---->>>: "+rondas);

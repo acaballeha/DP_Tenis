@@ -16,7 +16,7 @@ public class Tenista
     private int ranking;
     private String pais;
     private double puntosAcumulados;
-    private double numeroPie;
+    private int numeroPie;
     private Raqueta raqueta;
 
     /**
@@ -31,7 +31,7 @@ public class Tenista
      * @param pais Pais al que pertenece el tenista(String)
      */
 
-    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, double numeroPie)
+    public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, int numeroPie)
     {
         this.nombre= nombre;
         this.zapatilla=zapatilla;
@@ -49,7 +49,7 @@ public class Tenista
         this.numeroPie=numeroPie;
     }
 
-    public double getNumeroPie (){
+    public int getNumeroPie (){
         return numeroPie;
     }
 
