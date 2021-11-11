@@ -26,7 +26,7 @@ public class Campeonato
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
         zapatillasCampeonato= new ArrayList <> ();
-        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());
+        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorNombre ());
     }
 
     public void insertarZapatilla(Zapatilla z){

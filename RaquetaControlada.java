@@ -8,7 +8,7 @@
 public class RaquetaControlada extends RaquetaGenerica
 {
         public RaquetaControlada(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, String encordado)
+    double longitud, double tamanoDeLaCabeza, Encordado encordado)
     {
         super(modelo,peso,longitud,tamanoDeLaCabeza,encordado);
     }

@@ -13,7 +13,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     
     
     public RaquetaEquilibrada(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, String encordado,double multiPotencia,double multiControl)
+    double longitud, double tamanoDeLaCabeza, Encordado encordado,double multiPotencia,double multiControl)
     {
         super(modelo,peso,longitud,tamanoDeLaCabeza,encordado);
         this.multiPotencia=multiPotencia;

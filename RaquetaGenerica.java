@@ -16,13 +16,14 @@ public abstract class RaquetaGenerica implements Raqueta
      * Constructor for objects of class RaquetaGenerica
      */
     public RaquetaGenerica(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, String encordado)
+    double longitud, double tamanoDeLaCabeza, Encordado encordado)
     {
         this.modelo=modelo;
         this.peso=peso;
         this.longitud=longitud;
         this.tamanoDeLaCabeza=tamanoDeLaCabeza;
-        this.encordado=Encordado.valueOf(encordado);
+        //this.encordado=Encordado.valueOf(encordado);
+        this.encordado=encordado;
 
     }
 

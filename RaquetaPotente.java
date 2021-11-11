@@ -8,7 +8,7 @@
 public class RaquetaPotente extends RaquetaGenerica
 {
         public RaquetaPotente(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, String encordado)
+    double longitud, double tamanoDeLaCabeza, Encordado encordado)
     {
         super(modelo,peso,longitud,tamanoDeLaCabeza,encordado);
     }
