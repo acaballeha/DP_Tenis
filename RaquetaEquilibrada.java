@@ -13,9 +13,9 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     
     
     public RaquetaEquilibrada(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, Encordado encordado,double multiPotencia,double multiControl)
+    double longitud, double tamanoDeLaCabeza,Encordado encordado, double multiPotencia,double multiControl)
     {
-        super(modelo,peso,longitud,tamanoDeLaCabeza,encordado);
+        super(modelo,peso,longitud,tamanoDeLaCabeza, encordado);
         this.multiPotencia=multiPotencia;
         this.multiControl=multiControl;
     }
@@ -51,5 +51,10 @@ public class RaquetaEquilibrada extends RaquetaGenerica
 
     @Override
     public void mostrar(){
+          System.out.println("    ** RaquetaEquilibrada (MultiplicadorDePotencia:"+getMultPotencia()+")(MultiplicadorDeControl:"+getMultControl()+")");
+        System.out.print("      [modelo="+getModelo()+"\n      longitud: "+getLongitud()+",potencia asociada: "+calcularPotencia()+
+        "\n     tamaño: "+ getTamanoCabeza()+",control asociado: "+calcularControl()+
+        "\n     peso: " + getPeso()+ ",velocidad Asociada: "+calcularVelocidad());
+        //no hace salto de linea al final
     }
 }

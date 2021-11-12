@@ -21,6 +21,6 @@ public class ZapatillaAgarre extends ZapatillaGenerica
     
     @Override
     public void mostrar(){
-        
+        System.out.print(" ZapatillasConAgarre [Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
     }
 }

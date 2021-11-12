@@ -18,6 +18,7 @@ public class Tenista
     private double puntosAcumulados;
     private int numeroPie;
     private Raqueta raqueta;
+    private boolean asignacionZapatillas;
 
     /**
      * Constructor for objects of class Tenista
@@ -42,6 +43,7 @@ public class Tenista
         puntosAcumulados=0.0;
         this.numeroPie=numeroPie;
         this.raqueta = null;
+        this.asignacionZapatillas=false;
 
     }
 
@@ -159,6 +161,10 @@ public class Tenista
     public Raqueta getRaqueta(){
         return raqueta;
     }
+    
+    public boolean getAsignacionZapatillas(){
+        return asignacionZapatillas;
+    }
 
     //######################################MOdificado######################
     /**
@@ -213,6 +219,7 @@ public class Tenista
         System.out.println("Tenista [Nombre="+ nombre+ ", Saque=" + saque 
             + ", Resto="+resto + ", Ranking="+ ranking + ", Pais="+ pais+ "]");
         zapatilla.mostrar();
+        
     }
 
     /**
@@ -231,6 +238,8 @@ public class Tenista
         while (it.hasNext()){
             z= it.next();
             if(numeroPie == z.getNumero()){
+                asignacionZapatillas=true;//bandera para saber que se le han asignado zapatillas
+                this.zapatilla=z;
                 return z;
             }
         }
@@ -248,4 +257,6 @@ public class Tenista
         t2.sacar();
         restar(t2);
     }
+    
+    
 }

@@ -34,19 +34,20 @@ public class Campeonato
     }
 
     public void eliminarZapatilla(Zapatilla z){
-        Zapatilla aux;
-        boolean enc = false;
-        if(z != null){
-            Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
-            while (it.hasNext()){
-                aux= it.next();
-                if(aux.getNumero() == z.getNumero()){
-                    enc = true;
-                    it.remove();
-                }
-            }
+        // Zapatilla aux;
+        // boolean enc = false;
+        // if(z != null){
+            // Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
+            // while (it.hasNext()&&!enc){
+                // aux= it.next();
+                // if(aux.getModelo() == z.getModelo()){
+                    // enc = true;
+                    // it.remove();
+                // }
+            // }
 
-        }
+        // }
+        zapatillasCampeonato.remove(z);
         
     }
 
@@ -140,7 +141,17 @@ public class Campeonato
         for (int i=0; i<size/2;i++){
             System.out.println(" ### Juego ----------->>>: "+i);
             System.out.println("  ## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
+            if(competidores.get(i).getAsignacionZapatillas()==true){
+                System.out.print("Zapatillas asignadas:  ");
+                competidores.get(i).getZapatilla().mostrar();
+                System.out.println();
+            }
             System.out.println("  ## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
+             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
+                System.out.print("Zapatillas asignadas:  ");
+                competidores.get(size-i-1).getZapatilla().mostrar();
+                System.out.println();
+            }
             competidores.get(i).juego(competidores.get(size-i-1));
             int orden= eliminados.size()+1;
             if (competidores.get(i).getPuntosAcumulados() == competidores.get(size-i-1).getPuntosAcumulados()){

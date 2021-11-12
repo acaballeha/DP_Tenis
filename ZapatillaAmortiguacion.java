@@ -24,6 +24,6 @@ public class ZapatillaAmortiguacion extends ZapatillaGenerica
     
     @Override
     public void mostrar(){
-        
+         System.out.print(" ZapatillasConAmortiguación [Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
     }
 }

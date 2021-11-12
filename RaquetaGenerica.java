@@ -10,20 +10,31 @@ public abstract class RaquetaGenerica implements Raqueta
     private String modelo;
     private double peso;
     private double longitud;
-    private double tamanoDeLaCabeza;
+    private double tamanoCabeza;
     private Encordado encordado;
     /**
      * Constructor for objects of class RaquetaGenerica
      */
     public RaquetaGenerica(String modelo, double peso,
-    double longitud, double tamanoDeLaCabeza, Encordado encordado)
+    double longitud, double tamanoCabeza, Encordado encordado)
     {
         this.modelo=modelo;
         this.peso=peso;
         this.longitud=longitud;
-        this.tamanoDeLaCabeza=tamanoDeLaCabeza;
+        this.tamanoCabeza=tamanoCabeza;
         //this.encordado=Encordado.valueOf(encordado);
         this.encordado=encordado;
+
+    }
+     public RaquetaGenerica(String modelo, double peso,
+    double longitud, double tamanoCabeza)
+    {
+        this.modelo=modelo;
+        this.peso=peso;
+        this.longitud=longitud;
+        this.tamanoCabeza=tamanoCabeza;
+        //this.encordado=Encordado.valueOf(encordado);
+        this.encordado=null;
 
     }
 
@@ -40,8 +51,8 @@ public abstract class RaquetaGenerica implements Raqueta
         this.longitud = longitud;
     }
 
-    public void setTamanoDeLaCabeza (double tamanoDeLaCabeza){
-        this.tamanoDeLaCabeza = tamanoDeLaCabeza;
+    public void setTamanoCabeza (double tamanoCabeza){
+        this.tamanoCabeza = tamanoCabeza;
     }
 
     public void setEncordado (String encordado){
@@ -52,16 +63,16 @@ public abstract class RaquetaGenerica implements Raqueta
         return modelo;
     }
 
-    public double peso (){
+    public double getPeso (){
         return peso;
     }
 
-    public double longitud (){
+    public double getLongitud (){
         return longitud;
     }
 
-    public double tamanoDeLaCabeza (){
-        return tamanoDeLaCabeza;
+    public double getTamanoCabeza (){
+        return tamanoCabeza;
     }
 
     public String getEncordado (){
@@ -76,10 +87,7 @@ public abstract class RaquetaGenerica implements Raqueta
         return encordado.getMultControl();
     }
 
-    public void mostrar(){
-        System.out.println();
-
-    }
+    public abstract void mostrar();
 
     public double calcularPotencia(){
         Potencia p = new Potencia ();
@@ -88,7 +96,7 @@ public abstract class RaquetaGenerica implements Raqueta
     }
     public double calcularControl(){
         Control c = new Control ();
-        return c.getControl( new Double (tamanoDeLaCabeza));
+        return c.getControl( new Double (tamanoCabeza));
 
     }
 
@@ -97,5 +105,7 @@ public abstract class RaquetaGenerica implements Raqueta
         return v.getVelocidad( new Double (peso));
 
     }
+    
+    
 }
 

@@ -14,17 +14,17 @@ public interface Raqueta
 
     public void setLongitud (double longitud);
 
-    public void setTamanoDeLaCabeza (double tamanoDeLaCabeza);
+    public void setTamanoCabeza (double tamanoCabeza);
 
     public void setEncordado (String encordado);
 
     public String getModelo ();
 
-    public double peso ();
+    public double getPeso ();
 
-    public double longitud ();
+    public double getLongitud ();
 
-    public double tamanoDeLaCabeza ();
+    public double getTamanoCabeza ();
 
     public String getEncordado ();
 
