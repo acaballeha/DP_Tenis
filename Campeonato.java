@@ -13,7 +13,7 @@ public class Campeonato
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
     private ArrayList< Zapatilla> zapatillasCampeonato;
-    private Set <Raqueta> raquetasCampeonato;// se compara con compareTo
+    private TreeSet <Raqueta> raquetasCampeonato;// se compara con compareTo
 
     /**
      * Constructor de Campeonato.
@@ -26,7 +26,7 @@ public class Campeonato
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
         zapatillasCampeonato= new ArrayList <> ();
-        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorNombre ());
+        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());
     }
 
     public void insertarZapatilla(Zapatilla z){
@@ -34,56 +34,31 @@ public class Campeonato
     }
 
     public void eliminarZapatilla(Zapatilla z){
-        // Zapatilla aux;
-        // boolean enc = false;
-        // if(z != null){
-            // Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
-            // while (it.hasNext()&&!enc){
-                // aux= it.next();
-                // if(aux.getModelo() == z.getModelo()){
-                    // enc = true;
-                    // it.remove();
-                // }
-            // }
+        Zapatilla aux;
+        boolean enc = false;
+        if(z != null){
+            Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
+            while (it.hasNext()&&!enc){
+                aux= it.next();
+                if(aux.getModelo() == z.getModelo()){
+                    enc = true;
+                    it.remove();
+                }
+            }
 
-        // }
-       // zapatillasCampeonato.remove(z);
-       
-       Zapatilla aux;
-       boolean enc=false;
-       Iterator <Zapatilla> it= zapatillasCampeonato.iterator();
-       while(it.hasNext()&&!enc){
-           aux=it.next();
-           if(aux.getModelo().equals(z.getModelo())){
-               enc=true;
-               it.remove();
-            
-           }
-       }
-        //ordenarZapatillas();
-        
+        }
+ 
+
     }
 
-
-    public void ordenarZapatillas(){
-        Collections.sort(zapatillasCampeonato, new ZapatillaComparatorNumero());
-    }
-    
-
-    // public void asignarZapatillas(){
-        // //ordenarZapatillas();
-        // for(Tenista t : competidores){
-            // eliminarZapatilla(t.elegirZapatillas(zapatillasCampeonato));
-        // }
-    // }
-
+  
     public void insertarRaqueta(Raqueta r){
 
         if(!raquetasCampeonato.add(r)){
             System.out.println("Esta raqueta ya está registrada");
         }
     }
-    
+
     public void asignarRaquetas(){
         if(competidores.size() <= raquetasCampeonato.size()){
             Iterator <Raqueta> it =  raquetasCampeonato.iterator();
@@ -91,8 +66,10 @@ public class Campeonato
             for (Tenista t : competidores){
                 aux = it.next();
                 t.setRaqueta(aux);
+                aux.mostrar();
+                System.out.println(t.getNombre());
             }
-        
+
         }
     }
 
@@ -156,22 +133,21 @@ public class Campeonato
         for (int i=0; i<size/2;i++){
             System.out.println(" ### Juego ----------->>>: "+i);
             System.out.println("  ## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
-            
+
             if(competidores.get(i).getAsignacionZapatillas()==false){
                 eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
             }
             if(competidores.get(size-i-1).getAsignacionZapatillas()==false){
                 eliminarZapatilla(competidores.get(size-i-1).elegirZapatillas(zapatillasCampeonato));
             }
-            
-            
+
             if(competidores.get(i).getAsignacionZapatillas()==true){
                 System.out.print("Zapatillas asignadas:  ");
                 competidores.get(i).getZapatilla().mostrar();
                 System.out.println();
             }
             System.out.println("  ## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
-             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
+            if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
                 System.out.print("Zapatillas asignadas:  ");
                 competidores.get(size-i-1).getZapatilla().mostrar();
                 System.out.println();
@@ -254,10 +230,10 @@ public class Campeonato
     public void competicion(){
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
         mostrarCompetidores();
-        
+
         //asignarZapatillas();
         asignarRaquetas();
-        
+
         int rondas=1;
         while(competidores.size()>=2){
             System.out.println("\n\n***** Ronda---->>>: "+rondas);
