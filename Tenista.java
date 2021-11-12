@@ -173,10 +173,9 @@ public class Tenista
      * @return saque Saque del tenista(double)
      */
     public double calcularSaque(){
-        return zapatilla.calcularValorSaque() 
+        return  saque * zapatilla.calcularValorSaque() 
         * raqueta.calcularPotencia() 
-        * raqueta.calcularVelocidad() 
-        * saque;
+        * raqueta.calcularVelocidad();
     }
 
     /**
@@ -240,6 +239,7 @@ public class Tenista
             if(numeroPie == z.getNumero()){
                 asignacionZapatillas=true;//bandera para saber que se le han asignado zapatillas
                 this.zapatilla=z;
+                System.out.println(getNombre()+"coge: "+zapatilla.getModelo());
                 return z;
             }
         }

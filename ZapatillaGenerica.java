@@ -6,7 +6,7 @@
  * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
  * @version (1.0)
  */
-public class ZapatillaGenerica implements Zapatilla
+public abstract class  ZapatillaGenerica implements Zapatilla
 {
     // instance variables - replace the example below with your own
     private String modelo;
@@ -96,8 +96,6 @@ public class ZapatillaGenerica implements Zapatilla
      * Muestra toda la informacion de la zapatilla
      *  
      */
-    public void mostrar (){
-        System.out.print(" Zapatilla [Modelo="+ modelo+ ", Numero=" + numero + ", Valor="+ valor + "]");
-    }
+    public abstract void mostrar ();
 }
 

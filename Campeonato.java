@@ -47,20 +47,35 @@ public class Campeonato
             // }
 
         // }
-        zapatillasCampeonato.remove(z);
+       // zapatillasCampeonato.remove(z);
+       
+       Zapatilla aux;
+       boolean enc=false;
+       Iterator <Zapatilla> it= zapatillasCampeonato.iterator();
+       while(it.hasNext()&&!enc){
+           aux=it.next();
+           if(aux.getModelo().equals(z.getModelo())){
+               enc=true;
+               it.remove();
+            
+           }
+       }
+        //ordenarZapatillas();
         
     }
+
 
     public void ordenarZapatillas(){
         Collections.sort(zapatillasCampeonato, new ZapatillaComparatorNumero());
     }
     
-    public void asignarZapatillas(){
-        ordenarZapatillas();
-        for(Tenista t : competidores){
-            eliminarZapatilla(t.elegirZapatillas(zapatillasCampeonato));
-        }
-    }
+
+    // public void asignarZapatillas(){
+        // //ordenarZapatillas();
+        // for(Tenista t : competidores){
+            // eliminarZapatilla(t.elegirZapatillas(zapatillasCampeonato));
+        // }
+    // }
 
     public void insertarRaqueta(Raqueta r){
 
@@ -141,6 +156,15 @@ public class Campeonato
         for (int i=0; i<size/2;i++){
             System.out.println(" ### Juego ----------->>>: "+i);
             System.out.println("  ## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
+            
+            if(competidores.get(i).getAsignacionZapatillas()==false){
+                eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
+            }
+            if(competidores.get(size-i-1).getAsignacionZapatillas()==false){
+                eliminarZapatilla(competidores.get(size-i-1).elegirZapatillas(zapatillasCampeonato));
+            }
+            
+            
             if(competidores.get(i).getAsignacionZapatillas()==true){
                 System.out.print("Zapatillas asignadas:  ");
                 competidores.get(i).getZapatilla().mostrar();
@@ -231,7 +255,7 @@ public class Campeonato
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
         mostrarCompetidores();
         
-        asignarZapatillas();
+        //asignarZapatillas();
         asignarRaquetas();
         
         int rondas=1;

@@ -91,7 +91,7 @@ public abstract class RaquetaGenerica implements Raqueta
 
     public double calcularPotencia(){
         Potencia p = new Potencia ();
-        return p.getPotencia( new Double (longitud));
+        return p.getPotencia(new Double (longitud));
 
     }
     public double calcularControl(){

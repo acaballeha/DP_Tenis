@@ -26,7 +26,7 @@ public class Control
     }
     
     public double getControl (Double tamanoCabeza){
-        return valores.get(tamanoCabeza);
+        return valores.get(tamanoCabeza).doubleValue();
     }
 
 }

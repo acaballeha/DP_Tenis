@@ -26,7 +26,7 @@ public class Potencia
     }
     
     public double getPotencia (Double longitud){
-        return valores.get(longitud);
+        return valores.get(longitud).doubleValue();
     }
 
 }

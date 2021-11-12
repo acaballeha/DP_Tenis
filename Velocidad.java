@@ -26,7 +26,7 @@ public class Velocidad
     }
     
     public double getVelocidad (Double peso){
-        return valores.get(peso);
+        return valores.get(peso).doubleValue();
     }
 
 }
