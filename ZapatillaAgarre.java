@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class ZapatillaAgarre here.
+ * Subtipo de Zapatilla de tipo Agarre. Estas zapatillas mejoran la capacidad de resto del tenista.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class ZapatillaAgarre extends ZapatillaGenerica
 {
@@ -14,11 +14,19 @@ public class ZapatillaAgarre extends ZapatillaGenerica
     {
         super(modelo,numero,valor);
     }
-    
+
+    /**
+     * Multiplica el resto original de las zapatillas por 1.7
+     * 
+     * @return valorResto(double)
+     */
     public double calcularValorResto(){
         return super.calcularValorResto() * 1.7;
     }
-    
+
+    /**
+     * Muestra toda la informacion de las zapatillas
+     */
     @Override
     public void mostrar(){
         System.out.print("ZapatillasConAgarre [Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");

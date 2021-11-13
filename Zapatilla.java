@@ -2,8 +2,8 @@
 /**
  * Write a description of interface Zapatilla here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 
 public interface Zapatilla {

@@ -3,13 +3,15 @@ import java.util.HashMap;
 /**
  * Write a description of class Control here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class Control
 {
     Map <Double, Double > valores ; // <Key, Value>  
-
+    /**
+     * Constructor de valores
+     */
     public Control()
     {
         // initialise instance variables
@@ -24,7 +26,10 @@ public class Control
 
         
     }
-    
+    /**
+     * Devuelve el valor de control en relacion a una clave
+     * @return control Control de la cabeza(double)
+     */
     public double getControl (Double tamanoCabeza){
         return valores.get(tamanoCabeza).doubleValue();
     }

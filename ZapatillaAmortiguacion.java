@@ -2,8 +2,8 @@
 /**
  * Write a description of class ZapatillaAmortiguacion here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class ZapatillaAmortiguacion extends ZapatillaGenerica
 {
@@ -14,16 +14,21 @@ public class ZapatillaAmortiguacion extends ZapatillaGenerica
     public ZapatillaAmortiguacion(String modelo, int numero, double valor){
         super(modelo,numero,valor);
     }
-    
-    
+
+    /**
+     * Multiplica el valor de saque original por 1.8
+     * @return valorSaque(double)
+     */
     @Override
-    
     public double calcularValorSaque(){
         return super.calcularValorSaque() * 1.8;
     }
-    
+
+    /**
+     * Muestra toda la informacion de las zapatillas
+     */
     @Override
     public void mostrar(){
-         System.out.print("ZapatillasConAmortiguación [Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
+        System.out.print("ZapatillasConAmortiguación [Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
     }
 }

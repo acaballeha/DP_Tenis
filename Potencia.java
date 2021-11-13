@@ -3,13 +3,15 @@ import java.util.HashMap;
 /**
  * Write a description of class Potencia here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class Potencia
 {
     Map <Double, Double > valores ; // <Key, Value>  
-
+    /**
+     * Constructor de valores
+     */
     public Potencia()
     {
         // initialise instance variables
@@ -24,7 +26,10 @@ public class Potencia
 
         
     }
-    
+     /**
+     * Devuelve el valor de potencia en relacion a una clave
+     * @return potencia Potencia de la cabeza(double)
+     */
     public double getPotencia (Double longitud){
         return valores.get(longitud).doubleValue();
     }

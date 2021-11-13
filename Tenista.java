@@ -4,8 +4,8 @@ import java.util.Iterator;
  * Clase que define un tenista.
  * Define sus posibilidades de acumular puntos con los atributos saque, resto y sus zapatillas.
  * 
- * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
- * @version (1.0)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class Tenista
 {
@@ -16,13 +16,17 @@ public class Tenista
     private int ranking;
     private String pais;
     private double puntosAcumulados;
+    //EC2
     private int numeroPie;
     private Raqueta raqueta;
-    private boolean asignacionZapatillas;
+    private boolean asignacionZapatillas;//Atributo para saber en todo momento si le 
+    //han asignado al menos unas zapatillas nuevas
 
     /**
      * Constructor for objects of class Tenista
      * Los puntos acumulados del tenista comienzan en 0.0
+     * El tenista comienza sin una raqueta asignada
+     * El tenista comienza sin haber recibido unas zapatillas nuevas
      * 
      * @param nombre Nombre del tenista(String)
      * @param zapatilla Zapatilla que usará el tenista(Zapatilla)
@@ -30,6 +34,7 @@ public class Tenista
      * @param resto Velocidad de resto del tenista(double)
      * @param ranking Posicion en el Ranking Mundial del tenista(int)
      * @param pais Pais al que pertenece el tenista(String)
+     * @param numeroPie Numero de calzado del tenista (int)
      */
 
     public Tenista(String nombre,Zapatilla zapatilla,double saque, double resto,int ranking, String pais, int numeroPie)
@@ -47,10 +52,16 @@ public class Tenista
 
     }
 
+    /**
+     * @param numeroPie Numero de pie del tenista(int)
+     */
     public void setNumeroPie (int numeroPie){
         this.numeroPie=numeroPie;
     }
 
+    /**
+     * @return numeroPie(int)
+     */
     public int getNumeroPie (){
         return numeroPie;
     }
@@ -104,9 +115,19 @@ public class Tenista
     public void setPais(String pais){
         this.pais=pais;
     }
-    //##############################
+    //##############################EC2#########################
+    /**
+     * @param Raqueta Raqueta con la que jugara el tenista(Raqueta)
+     */
     public void setRaqueta(Raqueta r){
         this.raqueta=r;;
+    }
+    //##############################EC2#########################
+    /**
+     * @return raqueta(Raqueta)
+     */
+    public Raqueta getRaqueta(){
+        return raqueta;
     }
 
     /**
@@ -158,18 +179,19 @@ public class Tenista
         return ranking;
     }
 
-    public Raqueta getRaqueta(){
-        return raqueta;
-    }
-
+    //######################################EC2######################
+    /**
+     *@return asignacionZapatillas(boolean)
+     */
     public boolean getAsignacionZapatillas(){
         return asignacionZapatillas;
     }
 
-    //######################################MOdificado######################
+    //######################################EC2######################
     /**
      * Devuelve los puntos de saque resultantes de la velocidad de saque del
-     * tenista y el valor de saque de sus zapatillas.
+     * tenista por el valor de saque de sus zapatillas por el valor de la potencia
+     * de su raqueta y por el valor de la velocidad de su raqueta
      * @return saque Saque del tenista(double)
      */
     public double calcularSaque(){
@@ -177,10 +199,11 @@ public class Tenista
         * raqueta.calcularPotencia() 
         * raqueta.calcularVelocidad();
     }
-
+    //######################################EC2######################
     /**
      * Devuelve los puntos de resto resultantes de la velocidad de resto del
-     * tenista y el valor de resto de sus zapatillas.
+     * tenista por  el valor de resto de sus zapatillas por el valor de control
+     * de su raqueta y el valor de velocidad de su raqueta.
      * @return resto Resto del tenista(double)
      */
     public double calcularResto (){
@@ -230,8 +253,12 @@ public class Tenista
         puntosAcumulados=0;
     }
 
-    //#########################ddd
-
+    //######################################EC2######################
+    /**
+     * El tenista elige unas zapatillas de su numero si existen.
+     * @param zapatillas Estructura en la que buscara el tenista zapatillas de su numero(ArrayList<Zapatilla>)
+     * @return z Zapatilla que ha escogido o null en caso de no poder(Zapatilla)
+     */
     public Zapatilla elegirZapatillas(ArrayList <Zapatilla> zapatillas){
         Zapatilla z = null;
         Iterator <Zapatilla> it =  zapatillas.iterator();

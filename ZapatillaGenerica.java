@@ -3,8 +3,8 @@
  * Clase que define las zapatillas que usan los tenistas.
  * Las zapatillas pueden mejorar las habilidades del tenista(como saque o resta).
  * 
- * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
- * @version (1.0)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public abstract class  ZapatillaGenerica implements Zapatilla
 {
@@ -42,7 +42,6 @@ public abstract class  ZapatillaGenerica implements Zapatilla
         this.numero=numero;
     }
 
-
     /**
      * @param valor valor de la zapatilla(double)
      * 
@@ -54,7 +53,7 @@ public abstract class  ZapatillaGenerica implements Zapatilla
     /**
      * @return modelo(String)
      */
-    
+
     public String getModelo(){
         return modelo;
     }
@@ -72,19 +71,17 @@ public abstract class  ZapatillaGenerica implements Zapatilla
     public int getNumero(){
         return numero;
     }
-                    //#######################################Nuevo####################################
+    //#######################################EC2####################################
     /**
-     * Si las zapatillas son tipo "amortiguacion" multiplica el valor de la zaptilla por 2, si no devuelve
-     * unicamente el valor
+     * Multiplica el valor de la zaptilla por 1.2
      * @return valorSaque(double) 
      */
     public double calcularValorSaque(){
         return valor * 1.2;
     }
-            //#######################################Nuevo####################################
+    //#######################################EC2####################################
     /**
-     * Si las zapatillas son tipo "agarre" multiplica el valor de la zaptilla por 1.5, si no devuelve
-     * unicamente el valor
+     * Multiplica el valor de la zaptilla por 1.3
      * @return valorResto(double) 
      */
     public double calcularValorResto(){

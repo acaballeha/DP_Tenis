@@ -3,13 +3,15 @@ import java.util.HashMap;
 /**
  * Write a description of class Velocidad here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class Velocidad
 {
     Map <Double, Double > valores ; // <Key, Value>  
-
+    /**
+     * Constructor de valores
+     */
     public Velocidad()
     {
         // initialise instance variables
@@ -24,7 +26,10 @@ public class Velocidad
 
         
     }
-    
+       /**
+     * Devuelve el valor de velocida en relacion a una clave
+     * @return velocidad Velocidad de la cabeza(double)
+     */
     public double getVelocidad (Double peso){
         return valores.get(peso).doubleValue();
     }
