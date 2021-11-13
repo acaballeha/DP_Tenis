@@ -28,9 +28,9 @@ public class RaquetaControlada extends RaquetaGenerica
     public void mostrar(){
           System.out.println("    ** RaquetaControlada"+"(Encordado:"+getEncordado().toString()+
         ")(MultiplicadorDePotencia:"+getMultPotencia()+")(MultiplicadorDeControl:"+getMultControl()+")");
-        System.out.print("      [modelo="+getModelo()+"\n      longitud: "+getLongitud()+",potencia asociada: "+calcularPotencia()+
-        "\n     tamaño: "+ getTamanoCabeza()+",control asociado: "+calcularControl()+
-        "\n     peso: " + getPeso()+ ",velocidad Asociada: "+calcularVelocidad());
+        System.out.print("\t[modelo="+getModelo()+"\n\tlongitud: "+getLongitud()+",potencia asociada: "+calcularPotencia()+
+        "\n\ttamaño: "+ getTamanoCabeza()+",control asociado: "+calcularControl()+
+        "\n\tpeso: " + getPeso()+ ",velocidad Asociada: "+calcularVelocidad());
         //no hace salto de linea al final
     }
 }

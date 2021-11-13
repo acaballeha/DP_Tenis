@@ -105,10 +105,10 @@ public class Tenista
         this.pais=pais;
     }
     //##############################
-        public void setRaqueta(Raqueta r){
+    public void setRaqueta(Raqueta r){
         this.raqueta=r;;
     }
-    
+
     /**
      * @return pais Pais al que pertenece el tenista(String)
      */
@@ -157,11 +157,11 @@ public class Tenista
     public int getRanking (){
         return ranking;
     }
-    
+
     public Raqueta getRaqueta(){
         return raqueta;
     }
-    
+
     public boolean getAsignacionZapatillas(){
         return asignacionZapatillas;
     }
@@ -217,8 +217,9 @@ public class Tenista
     public void mostrar (){
         System.out.println("Tenista [Nombre="+ nombre+ ", Saque=" + saque 
             + ", Resto="+resto + ", Ranking="+ ranking + ", Pais="+ pais+ "]");
+        System.out.print("      ");
         zapatilla.mostrar();
-        
+
     }
 
     /**
@@ -239,7 +240,6 @@ public class Tenista
             if(numeroPie == z.getNumero()){
                 asignacionZapatillas=true;//bandera para saber que se le han asignado zapatillas
                 this.zapatilla=z;
-                System.out.println(getNombre()+"coge: "+zapatilla.getModelo());
                 return z;
             }
         }
@@ -257,6 +257,5 @@ public class Tenista
         t2.sacar();
         restar(t2);
     }
-    
-    
+
 }
