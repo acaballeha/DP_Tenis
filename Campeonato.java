@@ -1,11 +1,13 @@
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.TreeSet;
+import java.util.Iterator;
+import java.util.Collections;
 /**
  * Clase que define y maneja todo lo relativo al Campeonato: la lista de tenistas competidores, la lista de tenistas eliminados
  * y como se desarrolla el juego.
  * 
- * @author (Javier Tello Blázquez, Antonio Caballero Carrasco, Miguel Izquierdo Rojo) 
- * @version (1.0)
+ * @author Antonio Caballero Carrasco, Miguel Izquierdo Rojo, Javier Tello Blazquez
+ * @version 13/11/2021
  */
 public class Campeonato
 {
@@ -26,13 +28,21 @@ public class Campeonato
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
         zapatillasCampeonato= new ArrayList <> ();
-        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());
+        raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());//Se añade el criterio de ordenacion
     }
 
+    /**
+     * Añade la zapatilla al final de la estructura de zapatillas.
+     * @param z Zapatilla que se va a insertar(Zapatilla)
+     */
     public void insertarZapatilla(Zapatilla z){
         zapatillasCampeonato.add(z);
     }
 
+    /**
+     * Elimina la primera zapatilla que se llame igual que la indicada de la estructura de zapatillas.
+     * @param z Zapatilla que se va a eliminar(Zapatilla)
+     */
     private void eliminarZapatilla(Zapatilla z){
         Zapatilla aux;
         boolean enc = false;
@@ -49,16 +59,22 @@ public class Campeonato
         }
 
     }
- 
 
+    /**
+     * Añade la raqueta de forma ordenada por la potencia y el nombre a la estructura de raquetas. Si ya existe una no lo hace.
+     * @param r Raqueta que se va a insertar(Raqueta)
+     */
     public void insertarRaqueta(Raqueta r){
-
         if(!raquetasCampeonato.add(r)){
             System.out.println("Esta raqueta ya está registrada");
         }
     }
 
-    public void asignarRaquetas(){
+    /**
+     * Si existen suficientes raquetas asigna una a cada competidor del campeonato.
+     * 
+     */
+    private void asignarRaquetas(){
 
         if(competidores.size() <= raquetasCampeonato.size()){
             System.out.println("***** Asignando raquetas a tenistas *****");
@@ -130,6 +146,8 @@ public class Campeonato
     /**
      * Se realiza una ronda de juegos(la mitad del numero
      * de tenistas Competidores). 
+     * Si es posible se dan unas zapatillas a los tenistas antes de jugar 
+     *  y elimina estas de las zapatillas disponibles del campeonato.
      * Se elimina al jugador perdedor en cada juego.
      * Se muestran los datos del ganador y el perdedor de cada juego.
      * 
@@ -224,6 +242,7 @@ public class Campeonato
     /**
      * Inicia el campeonato.
      * Muestra el nombre del campeonato.
+     * Asigna las raquetas a cada tenista y las muestra.
      * Muestra a los tenistas Competidores.
      * Realiza las rondas necesarias hasta que solo quede 1 tenista competidor(GANADOR).
      * Muestra los datos del tenista ganador.
@@ -236,7 +255,7 @@ public class Campeonato
         asignarRaquetas();
         System.out.println();
         mostrarCompetidores();
-        
+
         int rondas=1;
         while(competidores.size()>=2){
             System.out.println("\n\n***** Ronda---->>>: "+rondas);

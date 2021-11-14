@@ -218,7 +218,7 @@ public class Tenista
      * tenista a sus puntos acumulados.
      * 
      */
-    public void sacar(){
+    private void sacar(){
         puntosAcumulados=puntosAcumulados + calcularSaque();
     }
 
@@ -227,7 +227,7 @@ public class Tenista
      * tenista a sus puntos acumulados, si sus puntos de resto son mayores que los puntos de saque del contrario.
      * @param t1 Tenista que realiza el saque(contrario)(Tenista)
      */
-    public void restar(Tenista t1){
+    private void restar(Tenista t1){
         if (calcularResto() > t1.calcularSaque()){
             puntosAcumulados = puntosAcumulados + calcularResto();
         }
