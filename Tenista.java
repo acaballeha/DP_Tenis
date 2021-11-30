@@ -275,14 +275,12 @@ public class Tenista
     }
 
     /**
-     * Juego de un par de tenistas. Uno saca, otro intenta restar y viceversa.
+     * Juego de un par de tenistas. Uno saca, otro intenta restar.
      * @param t2 Tenista que saca segundo(Tenista)
      */
     public void juego (Tenista t2){
         sacar();
         t2.restar(this);
-        t2.sacar();
-        restar(t2);
     }
 
 }

@@ -157,23 +157,32 @@ public class Campeonato
 
         for (int i=0; i<size/2;i++){
             System.out.println("\t### Juego ----------->>>: "+i);
-            System.out.println("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
-
+            
+            //asignacion zapatillas
             eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
             eliminarZapatilla(competidores.get(size-i-1).elegirZapatillas(zapatillasCampeonato));
-
+            
+            //Mostrar datos del primer tenista
+            System.out.println("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
             if(competidores.get(i).getAsignacionZapatillas()==true){
                 System.out.print("Zapatillas asignadas:  ");
                 competidores.get(i).getZapatilla().mostrar();
                 System.out.println();
             }
+            
+            //Mostrar datos del segundo tenista
             System.out.println("\t## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
                 System.out.print("Zapatillas asignadas:  ");
                 competidores.get(size-i-1).getZapatilla().mostrar();
                 System.out.println();
             }
+            
+            //Juego
             competidores.get(i).juego(competidores.get(size-i-1));
+            competidores.get(size-i-1).juego(competidores.get(i));
+            
+            //Mostrar ganador y eliminado. Organización.
             int orden= eliminados.size()+1;
             if (competidores.get(i).getPuntosAcumulados() == competidores.get(size-i-1).getPuntosAcumulados()){
                 if(competidores.get(i).getSaque()+competidores.get(i).getResto() > 
