@@ -93,6 +93,8 @@ public abstract class  ZapatillaGenerica implements Zapatilla
      * Muestra toda la informacion de la zapatilla
      *  
      */
-    public abstract void mostrar ();
+    public  void mostrar (){
+        System.out.print("[Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
+    }
 }
 
