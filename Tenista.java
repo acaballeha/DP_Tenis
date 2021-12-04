@@ -239,7 +239,8 @@ public class Tenista
      */
     public void mostrar (){
         System.out.println("Tenista [Nombre="+ nombre+ ", Saque=" + saque 
-            + ", Resto="+resto + ", Ranking="+ ranking + ", Pais="+ pais+ "]");
+            + ", Resto="+resto + ", Ranking="+ ranking + ", Pais="+ pais+
+            ", número pie:"+numeroPie+ "]");
         System.out.print("      ");
         zapatilla.mostrar();
 

@@ -133,7 +133,16 @@ public abstract class RaquetaGenerica implements Raqueta
     /**
      * Muestra la informacion de la raqueta
      */
-    public abstract void mostrar();
+    public  void mostrar(){
+        System.out.println("(MultiplicadorDePotencia:"+getMultPotencia()+
+        ")(MultiplicadorDeControl:"+getMultControl()+")");
+        System.out.print("\t[modelo="+getModelo()+
+            "\n\tlongitud: "+getLongitud()       +",potencia asociada: "+calcularPotencia()+
+            "\n\ttamaño: "  + getTamanoCabeza()  +",control asociado: "+calcularControl()+
+            "\n\tpeso: "    + getPeso()          + ",velocidad Asociada: "+calcularVelocidad());
+        //no hace salto de linea al final
+        
+    }
 
     /**
      * Devuelve la potencia de la raqueta en funcion de la longitud de la misma.

@@ -79,10 +79,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
      */
     @Override
     public void mostrar(){
-        System.out.println("    ** RaquetaEquilibrada (MultiplicadorDePotencia:"+getMultPotencia()+")(MultiplicadorDeControl:"+getMultControl()+")");
-        System.out.print("\t[modelo="+getModelo()+"\n\tlongitud: "+getLongitud()+",potencia asociada: "+calcularPotencia()+
-            "\n\ttamaño: "+ getTamanoCabeza()+",control asociado: "+calcularControl()+
-            "\n\tpeso: " + getPeso()+ ",velocidad Asociada: "+calcularVelocidad());
-        //no hace salto de linea al final
+        System.out.print("\t**RaquetaEquilibrada");
+        super.mostrar();
     }
 }

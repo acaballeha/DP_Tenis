@@ -48,12 +48,8 @@ public class RaquetaPotente extends RaquetaGenerica
      */
     @Override
     public void mostrar(){
-        System.out.println("    ** RaquetaPotente"+"(Encordado:"+getEncordado().toString()+
-            ")(MultiplicadorDePotencia:"+getMultPotencia()+")(MultiplicadorDeControl:"+getMultControl()+")");
-        System.out.print("\t[modelo="+getModelo()+
-            "\n\tlongitud: "+getLongitud()       +",potencia asociada: "+calcularPotencia()+
-            "\n\ttamaño: "  + getTamanoCabeza()  +",control asociado: "+calcularControl()+
-            "\n\tpeso: "    + getPeso()          + ",velocidad Asociada: "+calcularVelocidad());
-        //no hace salto de linea al final
+        System.out.print("\t**RaquetaPotente(Encordado:"+
+        getEncordado().toString()+")");
+        super.mostrar();
     }
 }
