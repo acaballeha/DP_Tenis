@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Collections;
+import java.util.Scanner;
 /**
  * Clase que define y maneja todo lo relativo al Campeonato: la lista de tenistas competidores, la lista de tenistas eliminados
  * y como se desarrolla el juego.
@@ -11,6 +12,11 @@ import java.util.Collections;
  */
 public class Campeonato
 {
+    /*
+     * Atributo de instancia unica para Campeonato (Patron singleton)
+     */
+    private static Campeonato instance = null;
+
     private String nombre;
     private ArrayList< Tenista> competidores; 
     private ArrayList< Tenista> eliminados;
@@ -22,13 +28,45 @@ public class Campeonato
      * @param nombre Nombre del campeonato(String)
      * 
      */
-    public Campeonato(String nombre)
+    private Campeonato(String nombre)
     {
         this.nombre=nombre;
         competidores = new ArrayList <Tenista> ();
         eliminados = new ArrayList <Tenista> ();
         zapatillasCampeonato= new ArrayList <> ();
         raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());//Se añade el criterio de ordenacion
+    }
+
+    /**
+     * Devuelve la instancia única de Campeonato si existe. Si no existe, crea una instancia con el nombre
+     * indicado por el usuario y la devuelve.
+     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
+     * 
+     */
+    public static Campeonato getInstance() {
+        if (instance == null){
+            System.out.println("No existe ningun campeonato aún. Indica el nombre: ");
+            Scanner sc = new Scanner(System.in);
+            String nombre= sc.next();
+            instance = new Campeonato(nombre);
+        }
+
+        return instance;
+    }
+    
+     /**
+     * Devuelve la instancia única de Campeonato si existe. Si no existe, crea una instancia con el nombre
+     * indicado por parametro y la devuelve.
+     * @param nombre Nombre que se dará al Campeonato(String)
+     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
+     * 
+     */
+    public static Campeonato getInstance(String nombre) {
+        if (instance == null){
+            instance = new Campeonato(nombre);
+        }
+
+        return instance;
     }
 
     /**
@@ -157,11 +195,11 @@ public class Campeonato
 
         for (int i=0; i<size/2;i++){
             System.out.println("\t### Juego ----------->>>: "+i);
-            
+
             //asignacion zapatillas
             eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
             eliminarZapatilla(competidores.get(size-i-1).elegirZapatillas(zapatillasCampeonato));
-            
+
             //Mostrar datos del primer tenista
             System.out.println("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
             if(competidores.get(i).getAsignacionZapatillas()==true){
@@ -169,7 +207,7 @@ public class Campeonato
                 competidores.get(i).getZapatilla().mostrar();
                 System.out.println();
             }
-            
+
             //Mostrar datos del segundo tenista
             System.out.println("\t## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
@@ -177,11 +215,11 @@ public class Campeonato
                 competidores.get(size-i-1).getZapatilla().mostrar();
                 System.out.println();
             }
-            
+
             //Juego
             competidores.get(i).juego(competidores.get(size-i-1));
             competidores.get(size-i-1).juego(competidores.get(i));
-            
+
             //Mostrar ganador y eliminado. Organización.
             int orden= eliminados.size()+1;
             if (competidores.get(i).getPuntosAcumulados() == competidores.get(size-i-1).getPuntosAcumulados()){
