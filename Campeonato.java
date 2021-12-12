@@ -12,15 +12,13 @@ import java.util.Scanner;
  */
 public class Campeonato
 {
-    /*
-     * Atributo de instancia unica para Campeonato (Patron singleton)
-     */
-    private static Campeonato instance = null;
+ 
+    private static Campeonato instance = null;//atributo instanciado unico de Campeonato
 
     private String nombre;
-    private ArrayList< Tenista> competidores; 
-    private ArrayList< Tenista> eliminados;
-    private ArrayList< Zapatilla> zapatillasCampeonato;
+    private ArrayList< Tenista> competidores; //lista de competidores (sin eliminar).Ordenado por insercion al final.
+    private ArrayList< Tenista> eliminados;//lista de competidores eliminados. Ordenado por orden de eliminacion.
+    private ArrayList< Zapatilla> zapatillasCampeonato;//lista de zapatillas disponibles.Ordenado por insercion.
     private TreeSet <Raqueta> raquetasCampeonato;// se compara con compareTo
 
     /**
@@ -37,37 +35,6 @@ public class Campeonato
         raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());//Se añade el criterio de ordenacion
     }
 
-    /**
-     * Devuelve la instancia única de Campeonato si existe. Si no existe, crea una instancia con el nombre
-     * indicado por el usuario y la devuelve.
-     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
-     * 
-     */
-    public static Campeonato getInstance() {
-        if (instance == null){
-            System.out.println("No existe ningun campeonato aún. Indica el nombre: ");
-            Scanner sc = new Scanner(System.in);
-            String nombre= sc.next();
-            instance = new Campeonato(nombre);
-        }
-
-        return instance;
-    }
-    
-     /**
-     * Devuelve la instancia única de Campeonato si existe. Si no existe, crea una instancia con el nombre
-     * indicado por parametro y la devuelve.
-     * @param nombre Nombre que se dará al Campeonato(String)
-     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
-     * 
-     */
-    public static Campeonato getInstance(String nombre) {
-        if (instance == null){
-            instance = new Campeonato(nombre);
-        }
-
-        return instance;
-    }
 
     /**
      * Añade la zapatilla al final de la estructura de zapatillas.
@@ -77,6 +44,7 @@ public class Campeonato
         zapatillasCampeonato.add(z);
     }
 
+    
     /**
      * Elimina la primera zapatilla que se llame igual que la indicada de la estructura de zapatillas.
      * @param z Zapatilla que se va a eliminar(Zapatilla)
@@ -108,11 +76,12 @@ public class Campeonato
         }
     }
 
+
     /**
      * Si existen suficientes raquetas asigna una a cada competidor del campeonato.
      * 
      */
-    private void asignarRaquetas(){
+    private void asignarRaquetasTodos(){
 
         if(competidores.size() <= raquetasCampeonato.size()){
             System.out.println("***** Asignando raquetas a tenistas *****");
@@ -197,6 +166,7 @@ public class Campeonato
             System.out.println("\t### Juego ----------->>>: "+i);
 
             //asignacion zapatillas
+            //##Cambios necesarios aqui
             eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
             eliminarZapatilla(competidores.get(size-i-1).elegirZapatillas(zapatillasCampeonato));
 
@@ -299,7 +269,7 @@ public class Campeonato
     public void competicion(){
         System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
 
-        asignarRaquetas();
+        asignarRaquetasTodos();
         System.out.println();
         mostrarCompetidores();
 
@@ -316,5 +286,73 @@ public class Campeonato
         System.out.println(" <<<<----\n\n");
 
         mostrarEliminados();
+    }
+    
+    
+    //########################EC3#######################3
+    /**
+     * Asigna la primera raqueta al tenista y la elimina de la estructura.
+     * (Siempre que haya raquetas disponibles).
+     * @param t Tenista al que se le asignara una raqueta(Tenista).
+     */
+    public void asignarRaqueta(Tenista t){
+        if(!raquetasCampeonato.isEmpty()){
+            t.setRaqueta(raquetasCampeonato.pollFirst());        
+        }
+
+    }
+
+    /**
+     * Asigna la primera zapatilla que encuentre para el numero de pie del tenista a ese tenista
+     * y elimina la zapatilla de la lista.
+     * @param t Tenista al que se le asignara (si quedan zapatillas de su numero) unas zapatillas(Tenista).
+     */
+    public void asignarZapatilla(Tenista t){
+        boolean enc=false;
+        Zapatilla z = null;
+        if(!zapatillasCampeonato.isEmpty()){
+            Iterator <Zapatilla> it =  zapatillasCampeonato.iterator();
+            while (it.hasNext()&&!enc){
+                z= it.next();
+                if(t.getNumeroPie() == z.getNumero()){
+                    enc=true;
+                    t.setAsignacionZapatillas(true);//bandera para saber que se le han asignado zapatillas
+                    t.setZapatilla(z);
+                    it.remove();
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Devuelve la instancia unica de Campeonato, en caso de no existir 
+     * la crea con el nombre introducido por el usuario y la devuelve.
+     * indicado por el usuario y la devuelve.
+     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
+     * 
+     */
+    public static Campeonato getInstance() {
+        if (instance == null){
+            System.out.println("No existe ningun campeonato aún. Indica el nombre: ");
+            Scanner sc = new Scanner(System.in);
+            String nombre= sc.next();
+            instance = new Campeonato(nombre);
+        }
+        return instance;
+    }
+
+    /**
+     * Devuelve la instancia unica de Campeonato, en caso de no existir 
+     * la crea con el nombre por parametro y la devuelve.
+     * @param nombre Nombre que se dará al Campeonato(String)
+     * @return instance Devuelve la instancia unica de Campeonato(Campeonato).
+     * 
+     */
+    public static Campeonato getInstance(String nombre) {
+        if (instance == null){
+            instance = new Campeonato(nombre);
+        }
+        return instance;
     }
 }

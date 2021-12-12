@@ -115,20 +115,6 @@ public class Tenista
     public void setPais(String pais){
         this.pais=pais;
     }
-    //##############################EC2#########################
-    /**
-     * @param Raqueta Raqueta con la que jugara el tenista(Raqueta)
-     */
-    public void setRaqueta(Raqueta r){
-        this.raqueta=r;;
-    }
-    //##############################EC2#########################
-    /**
-     * @return raqueta(Raqueta)
-     */
-    public Raqueta getRaqueta(){
-        return raqueta;
-    }
 
     /**
      * @return pais Pais al que pertenece el tenista(String)
@@ -179,15 +165,6 @@ public class Tenista
         return ranking;
     }
 
-    //######################################EC2######################
-    /**
-     *@return asignacionZapatillas(boolean)
-     */
-    public boolean getAsignacionZapatillas(){
-        return asignacionZapatillas;
-    }
-
-    //######################################EC2######################
     /**
      * Devuelve los puntos de saque resultantes de la velocidad de saque del
      * tenista por el valor de saque de sus zapatillas por el valor de la potencia
@@ -198,19 +175,6 @@ public class Tenista
         return  saque * zapatilla.calcularValorSaque() 
         * raqueta.calcularPotencia() 
         * raqueta.calcularVelocidad();
-    }
-    //######################################EC2######################
-    /**
-     * Devuelve los puntos de resto resultantes de la velocidad de resto del
-     * tenista por  el valor de resto de sus zapatillas por el valor de control
-     * de su raqueta y el valor de velocidad de su raqueta.
-     * @return resto Resto del tenista(double)
-     */
-    public double calcularResto (){
-        return zapatilla.calcularValorResto() 
-        * raqueta.calcularControl() 
-        * raqueta.calcularVelocidad() 
-        * resto;
     }
 
     /**
@@ -254,6 +218,16 @@ public class Tenista
         puntosAcumulados=0;
     }
 
+    /**
+     * Juego de un par de tenistas. Uno saca, otro intenta restar.
+     * @param t2 Tenista que saca segundo(Tenista)
+     */
+    public void juego (Tenista t2){
+        sacar();
+        t2.restar(this);
+        //#cambios necesarios AQUI
+    }
+
     //######################################EC2######################
     /**
      * El tenista elige unas zapatillas de su numero si existen.
@@ -273,15 +247,79 @@ public class Tenista
         }
         return z;
 
+    }    
+
+    /**
+     * Devuelve los puntos de resto resultantes de la velocidad de resto del
+     * tenista por  el valor de resto de sus zapatillas por el valor de control
+     * de su raqueta y el valor de velocidad de su raqueta.
+     * @return resto Resto del tenista(double)
+     */
+    public double calcularResto (){
+        return zapatilla.calcularValorResto() 
+        * raqueta.calcularControl() 
+        * raqueta.calcularVelocidad() 
+        * resto;
     }
 
     /**
-     * Juego de un par de tenistas. Uno saca, otro intenta restar.
-     * @param t2 Tenista que saca segundo(Tenista)
+     * 
+     *@return asignacionZapatillas Devuelve si al tenista le han asignado alguna zapatilla nueva(boolean).
      */
-    public void juego (Tenista t2){
-        sacar();
-        t2.restar(this);
+    public boolean getAsignacionZapatillas(){
+        return asignacionZapatillas;
     }
 
+    /**
+     * @param a Valor booleano que decide si se le han asignado zapatilas al tenista.(boolean).
+     */
+    public void setAsignacionZapatillas(boolean a){
+        asignacionZapatillas=a;
+    }
+
+    /**
+     * @param Raqueta Raqueta con la que jugara el tenista(Raqueta)
+     */
+    public void setRaqueta(Raqueta r){
+        this.raqueta=r;;
+    }
+
+    /**
+     * @return raqueta(Raqueta)
+     */
+    public Raqueta getRaqueta(){
+        return raqueta;
+    }
+    //#####################EC3######################
+    /**
+     * Añade al tenista a la lista de competidores del Campeonato.
+     */
+    public void realizarInscripcion(){
+        Campeonato c= Campeonato.getInstance();
+        c.inscribirTenista(this);
+
+    }
+
+    /**
+     * El tenista elige unas zapatillas (las primera que encuentre) de su numero, siempre que existan algunas 
+     * en la lista de zapatillas del campeonato.
+     */
+    public void elegirZapatillas(){
+        Campeonato c= Campeonato.getInstance();
+        c.asignarZapatilla(this);
+    }
+
+    /**
+     * El tenista cambia su raqueta por la primera que haya en el set de raquetas del campeonato.
+     * (Siempre que exista alguna).
+     */
+    public void cambiarRaqueta(){
+        Campeonato c=Campeonato.getInstance();
+        c.asignarRaqueta(this);
+    }
+    
+    /**
+     * 
+     */
+    // public void golpear();
 }
