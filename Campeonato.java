@@ -301,6 +301,22 @@ public class Campeonato
         }
 
     }
+    
+    public void asignarRaquetaVelocidad(Tenista t){
+        if(!raquetasCampeonato.isEmpty()){
+            Raqueta r = null;
+            boolean enc = false;
+            Iterator <Raqueta> it = raquetasCampeonato.iterator();
+            while(it.hasNext() && !enc){
+                r = it.next();
+                if(t.getRaqueta().calcularVelocidad() < r.calcularVelocidad()){
+                    enc = true;
+                    t.setRaqueta(r);
+                    it.remove();
+            }
+        }
+    }
+}
 
     /**
      * Asigna la primera zapatilla que encuentre para el numero de pie del tenista a ese tenista

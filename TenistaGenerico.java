@@ -165,17 +165,7 @@ public abstract class TenistaGenerico implements Tenista
         return ranking;
     }
 
-    /**
-     * Devuelve los puntos de saque resultantes de la velocidad de saque del
-     * tenista por el valor de saque de sus zapatillas por el valor de la potencia
-     * de su raqueta y por el valor de la velocidad de su raqueta
-     * @return saque Saque del tenista(double)
-     */
-    public double calcularSaque(){
-        return  saque * zapatilla.calcularValorSaque() 
-        * raqueta.calcularPotencia() 
-        * raqueta.calcularVelocidad();
-    }
+
 
     /**
      * Suma los puntos de saque del
@@ -261,6 +251,18 @@ public abstract class TenistaGenerico implements Tenista
         * raqueta.calcularVelocidad() 
         * resto;
     }
+    
+        /**
+     * Devuelve los puntos de saque resultantes de la velocidad de saque del
+     * tenista por el valor de saque de sus zapatillas por el valor de la potencia
+     * de su raqueta y por el valor de la velocidad de su raqueta
+     * @return saque Saque del tenista(double)
+     */
+    public double calcularSaque(){
+        return  saque * zapatilla.calcularValorSaque() 
+        * raqueta.calcularPotencia() 
+        * raqueta.calcularVelocidad();
+    }
 
     /**
      * 
@@ -321,5 +323,5 @@ public abstract class TenistaGenerico implements Tenista
     /**
      * 
      */
-     public abstract  void golpear();
+     public abstract void golpear();
 }
