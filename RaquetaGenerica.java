@@ -134,14 +134,42 @@ public abstract class RaquetaGenerica implements Raqueta
      * Muestra la informacion de la raqueta
      */
     public  void mostrar(){
-        System.out.println("(MultiplicadorDePotencia:"+getMultPotencia()+
-        ")(MultiplicadorDeControl:"+getMultControl()+")");
-        System.out.print("\t[modelo="+getModelo()+
-            "\n\tlongitud: "+getLongitud()       +",potencia asociada: "+calcularPotencia()+
-            "\n\ttamaño: "  + getTamanoCabeza()  +",control asociado: "+calcularControl()+
-            "\n\tpeso: "    + getPeso()          + ",velocidad Asociada: "+calcularVelocidad());
+        System.out.println(this.toString());
+        //no hace salto de linea al final        
+    }
+  
+    @Override
+    /**
+     * Devuelve en un string con la información del Tenista
+     * @return str Informacion del Tenista(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        
+        str.append("(MultiplicadorDePotencia:");
+        str.append(getMultPotencia());
+        str.append("(MultiplicadorDeControl:");
+        str.append(getMultControl());
+        str.append(")\n");
+        str.append("\t[modelo=");
+        str.append(getModelo());
+        str.append("\n\tlongitud: ");
+        str.append(getLongitud());
+        str.append(",potencia asociada:");
+        str.append(calcularPotencia());
+        str.append("\n\ttamaño: ");
+        str.append(getTamanoCabeza());
+        str.append(",control asociado:");
+        str.append(calcularControl());
+        str.append("\n\tpeso: ");
+        str.append(getPeso());
+        str.append(",Velocidad Asociada:");
+        str.append(calcularVelocidad());
+        str.append("]");
+        
         //no hace salto de linea al final
         
+        return str.toString();
     }
 
     /**

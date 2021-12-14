@@ -94,7 +94,25 @@ public abstract class  ZapatillaGenerica implements Zapatilla
      *  
      */
     public  void mostrar (){
-        System.out.print("[Modelo="+ getModelo()+ ", Numero=" + getNumero() + ", Valor="+ getValor() + "]");
+        System.out.print(this.toString());
+    }
+
+    @Override
+    /**
+     * Devuelve en un string con la información de la zapatilla
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("[Modelo=");
+        str.append(getModelo());
+        str.append(", Numero=");
+        str.append(getNumero());
+        str.append(", Valor=");
+        str.append(getValor());
+        str.append("]");
+
+        return str.toString();
     }
 }
 

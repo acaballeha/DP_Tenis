@@ -166,7 +166,6 @@ public abstract class TenistaGenerico implements Tenista
     }
 
 
-
     /**
      * Suma los puntos de saque del
      * tenista a sus puntos acumulados.
@@ -192,12 +191,40 @@ public abstract class TenistaGenerico implements Tenista
      * 
      */
     public void mostrar (){
-        System.out.println("Tenista [Nombre="+ nombre+ ", Saque=" + saque 
-            + ", Resto="+resto + ", Ranking="+ ranking + ", Pais="+ pais+
-            ", número pie:"+numeroPie+ "]");
-        System.out.print("      ");
-        zapatilla.mostrar();
+        System.out.println(this.toString());
 
+    }
+
+    @Override
+    /**
+     * Devuelve en un string con la información del Tenista
+     * @return str Informacion del Tenista(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("Tenista [Nombre= ");
+        str.append(getNombre());
+        str.append(", Saque=");
+        str.append(getSaque());
+        str.append(", Resto=");
+        str.append(getResto());
+        str.append(", Ranking=");
+        str.append(getRanking());
+        str.append(", Pais=");
+        str.append(getPais());
+        str.append(", numero pie=");
+        str.append(getNumeroPie());
+        str.append("]\n");
+        str.append("      ");
+        str.append(getZapatilla().toString());
+        if(raqueta != null){
+            str.append("\n");
+            str.append(getRaqueta().toString());
+            str.append("\n");
+        }
+
+        return str.toString();
     }
 
     /**
@@ -251,8 +278,8 @@ public abstract class TenistaGenerico implements Tenista
         * raqueta.calcularVelocidad() 
         * resto;
     }
-    
-        /**
+
+    /**
      * Devuelve los puntos de saque resultantes de la velocidad de saque del
      * tenista por el valor de saque de sus zapatillas por el valor de la potencia
      * de su raqueta y por el valor de la velocidad de su raqueta
@@ -319,9 +346,11 @@ public abstract class TenistaGenerico implements Tenista
         Campeonato c=Campeonato.getInstance();
         c.asignarRaqueta(this);
     }
-    
+
     /**
      * 
      */
-     public abstract void golpear();
+    public abstract void golpear();
+
+
 }

@@ -20,7 +20,7 @@ public class RaquetaControlada extends RaquetaGenerica
     {
         super(modelo,peso,longitud,tamanoDeLaCabeza,encordado);
     }
-    
+
     /**
      * Devuelve el valor de control relativo al tamaño de la cabeza 
      * multiplicado por el multiplicador de control del encordado
@@ -30,6 +30,7 @@ public class RaquetaControlada extends RaquetaGenerica
     public double calcularControl(){
         return super.calcularControl() * super.getMultControl();
     }
+
     /**
      * Devuelve el valor de velocidad relativo al peso
      * multiplicado por 1.2
@@ -39,13 +40,31 @@ public class RaquetaControlada extends RaquetaGenerica
     public double calcularVelocidad(){
         return super.calcularVelocidad() * 1.2;
     }
+
     /**
      * Muestra todos los datos de la raqueta controlada. No hace salto de linea al acabar.
      */
     @Override
     public void mostrar(){
-        System.out.print("\t**RaquetaControlada(Encordado:"
-        +getEncordado().toString()+")");
-        super.mostrar();
+        System.out.print(this.toString());
     }
+
+    @Override
+    /**
+     * Devuelve en un string con la información del Tenista
+     * @return str Informacion del Tenista(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("\t**RaquetaControlada(Encordado:");
+        str.append(getEncordado().toString());
+        str.append(")");
+        str.append(super.toString());
+
+        //no hace salto de linea al final
+
+        return str.toString();
+    }
+
 }

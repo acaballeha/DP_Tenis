@@ -48,8 +48,24 @@ public class RaquetaPotente extends RaquetaGenerica
      */
     @Override
     public void mostrar(){
-        System.out.print("\t**RaquetaPotente(Encordado:"+
-        getEncordado().toString()+")");
-        super.mostrar();
+        System.out.print(this.toString());
+    }
+
+    @Override
+    /**
+     * Devuelve en un string con la información del Tenista
+     * @return str Informacion del Tenista(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("\t**RaquetaPotente(Encordado:");
+        str.append(getEncordado().toString());
+        str.append(")");
+        str.append(super.toString());
+
+        //no hace salto de linea al final
+
+        return str.toString();
     }
 }

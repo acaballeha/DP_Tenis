@@ -16,7 +16,7 @@ public class TennisDemo {
         // //Carga de datos iniciales del campeonato
         
         // Instanciar una variable de tipo InitTennisData pasando la variable instanciada de tipo campeonato como parámetro;
-        
+        InitTennisData d = new InitTennisData(c);
         
         
         // //Llamada al método que inicia la simulación del campeonato

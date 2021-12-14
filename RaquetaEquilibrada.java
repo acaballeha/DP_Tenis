@@ -10,7 +10,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     private double multiPotencia;
     private double multiControl;
 
-     /**
+    /**
      * Constructor
      * @param modelo Nombre de la raqueta(String)
      * @param peso Peso de la raqueta(double)
@@ -26,6 +26,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
         this.multiPotencia=multiPotencia;
         this.multiControl=multiControl;
     }
+
     /**
      * 
      * @return multiPotencia Multiplicador de potencia de la raqueta(double)
@@ -34,6 +35,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public double getMultPotencia(){
         return multiPotencia;
     }
+
     /**
      * 
      * @return multiControl Multiplicador de control de la raqueta(double)
@@ -42,6 +44,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public double getMultControl(){
         return multiControl;
     }
+
     /**
      * 
      * @param multiPotencia Multiplicador de potencia de la raqueta(double)
@@ -49,6 +52,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public void setMultiPotencia(double multiPotencia){
         this.multiPotencia=multiPotencia;
     }
+
     /**
      * 
      * @param multiControl Multiplicador de control de la raqueta(double)
@@ -56,6 +60,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public void setMultiControl(double multiControl){
         this.multiControl=multiControl;
     }
+
     /**
      * Devuelve el valor de potencia relativo a la longitud de la raqueta
      * multiplicado por el multiplicador de potencia de la propia raqueta.
@@ -65,6 +70,7 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public double calcularPotencia(){
         return super.calcularPotencia() * getMultPotencia();
     }
+
     /**
      * Devuelve el valor de control relativo a al tamaño de la cabeza de la raqueta
      * multiplicado por el multiplicador de control de la propia raqueta.
@@ -74,12 +80,28 @@ public class RaquetaEquilibrada extends RaquetaGenerica
     public double calcularControl(){
         return super.calcularControl() * getMultControl();
     }
+
     /**
      * Muestra todos los datos de la raqueta equilibrada. No hace salto de linea al acabar.
      */
     @Override
     public void mostrar(){
-        System.out.print("\t**RaquetaEquilibrada");
-        super.mostrar();
+        System.out.print(this.toString());
+    }
+
+    @Override
+    /**
+     * Devuelve en un string con la información del Tenista
+     * @return str Informacion del Tenista(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("\t**RaquetaEquilibrada");
+        str.append(super.toString());
+
+        //no hace salto de linea al final
+
+        return str.toString();
     }
 }

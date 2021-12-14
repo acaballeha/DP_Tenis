@@ -29,7 +29,21 @@ public class ZapatillaAmortiguacion extends ZapatillaGenerica
      */
     @Override
     public void mostrar(){
-         System.out.print("ZapatillasAmortiguadas ");
-        super.mostrar();
+        System.out.print(this.toString());
+
+    }
+
+    @Override
+    /**
+     * Devuelve en un string con la información de la zapatilla
+     * @return str Informacion de la zapatilla(String)
+     */
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+
+        str.append("ZapatillasAmortiguadas ");
+        str.append(super.toString());
+
+        return str.toString();
     }
 }

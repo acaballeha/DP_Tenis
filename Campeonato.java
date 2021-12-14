@@ -133,7 +133,6 @@ public class Campeonato
         for (Tenista t: competidores){
             System.out.print("    **");
             t.mostrar();
-            System.out.println();
         }
     }
 
@@ -146,7 +145,7 @@ public class Campeonato
         for (Tenista t: eliminados){
             System.out.print("    **");
             t.mostrar();
-            System.out.println();
+
         }
     }
 
@@ -173,7 +172,7 @@ public class Campeonato
             //Mostrar datos del primer tenista
             System.out.println("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
             if(competidores.get(i).getAsignacionZapatillas()==true){
-                System.out.print("Zapatillas asignadas:  ");
+                System.out.print("\tZapatillas asignadas:  ");
                 competidores.get(i).getZapatilla().mostrar();
                 System.out.println();
             }
@@ -181,7 +180,7 @@ public class Campeonato
             //Mostrar datos del segundo tenista
             System.out.println("\t## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
-                System.out.print("Zapatillas asignadas:  ");
+                System.out.print("\tZapatillas asignadas:  ");
                 competidores.get(size-i-1).getZapatilla().mostrar();
                 System.out.println();
             }
