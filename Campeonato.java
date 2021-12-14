@@ -3,6 +3,7 @@ import java.util.TreeSet;
 import java.util.Iterator;
 import java.util.Collections;
 import java.util.Scanner;
+import java.io.*;
 /**
  * Clase que define y maneja todo lo relativo al Campeonato: la lista de tenistas competidores, la lista de tenistas eliminados
  * y como se desarrolla el juego.
