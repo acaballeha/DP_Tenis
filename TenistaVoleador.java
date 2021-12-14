@@ -21,13 +21,26 @@ public class TenistaVoleador extends TenistaGenerico
      * 
      */
     public void golpear(){
-        super.setPuntosAcumulados(super.getPuntosAcumulados() + (super.getRaqueta().calcularPotencia() * 0.15)); 
+        setPuntosAcumulados(getPuntosAcumulados() + (getRaqueta().calcularPotencia() * 0.15)); 
     }
 
     @Override
     public void cambiarRaqueta(){
         Campeonato c = Campeonato.getInstance();
         c.asignarRaquetaVelocidad(this);
+    }
+
+    @Override
+    /**
+     * Juego de un par de tenistas. Uno saca, otro intenta restar.
+     * @param t2 Tenista que saca segundo(Tenista)
+     */
+    public void juego (Tenista t2){
+        sacar();
+        t2.restar(this);
+        golpear();
+        cambiarRaqueta();
+        //#cambios necesarios AQUI
     }
 
     @Override

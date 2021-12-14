@@ -13,7 +13,7 @@ import java.io.*;
  */
 public class Campeonato
 {
- 
+
     private static Campeonato instance = null;//atributo instanciado unico de Campeonato
 
     private String nombre;
@@ -36,7 +36,6 @@ public class Campeonato
         raquetasCampeonato = new TreeSet <> (new RaquetaComparatorPotencia ());//Se añade el criterio de ordenacion
     }
 
-
     /**
      * Añade la zapatilla al final de la estructura de zapatillas.
      * @param z Zapatilla que se va a insertar(Zapatilla)
@@ -45,7 +44,6 @@ public class Campeonato
         zapatillasCampeonato.add(z);
     }
 
-    
     /**
      * Elimina la primera zapatilla que se llame igual que la indicada de la estructura de zapatillas.
      * @param z Zapatilla que se va a eliminar(Zapatilla)
@@ -76,7 +74,6 @@ public class Campeonato
             System.out.println("Esta raqueta ya está registrada");
         }
     }
-
 
     /**
      * Si existen suficientes raquetas asigna una a cada competidor del campeonato.
@@ -123,6 +120,18 @@ public class Campeonato
         eliminados.add(0,competidores.get(i));
         competidores.remove(i);
 
+    }
+    
+    /**
+     * Muestra los datos de todas las raquetas disponibles en el campeonato
+     */
+    private void mostrarRaquetas (){
+        System.out.println("***** Listado de raquetas disponibles: ");
+        for(Raqueta t: raquetasCampeonato){
+            System.out.print("    **");
+            t.mostrar();
+            System.out.println();
+        }
     }
 
     /**
@@ -272,6 +281,7 @@ public class Campeonato
         asignarRaquetasTodos();
         System.out.println();
         mostrarCompetidores();
+        mostrarRaquetas();
 
         int rondas=1;
         while(competidores.size()>=2){
@@ -287,8 +297,7 @@ public class Campeonato
 
         mostrarEliminados();
     }
-    
-    
+
     //########################EC3#######################3
     /**
      * Asigna la primera raqueta al tenista y la elimina de la estructura.
@@ -297,11 +306,13 @@ public class Campeonato
      */
     public void asignarRaqueta(Tenista t){
         if(!raquetasCampeonato.isEmpty()){
-            t.setRaqueta(raquetasCampeonato.pollFirst());        
+            System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
+            t.setRaqueta(raquetasCampeonato.pollFirst());
+            System.out.println(t.getRaqueta().toString());
         }
 
     }
-    
+
     public void asignarRaquetaVelocidad(Tenista t){
         if(!raquetasCampeonato.isEmpty()){
             Raqueta r = null;
@@ -310,13 +321,15 @@ public class Campeonato
             while(it.hasNext() && !enc){
                 r = it.next();
                 if(t.getRaqueta().calcularVelocidad() < r.calcularVelocidad()){
+                    System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
                     enc = true;
                     t.setRaqueta(r);
+                    System.out.println(t.getRaqueta().toString());
                     it.remove();
+                }
             }
         }
     }
-}
 
     /**
      * Asigna la primera zapatilla que encuentre para el numero de pie del tenista a ese tenista

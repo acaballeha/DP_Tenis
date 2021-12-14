@@ -21,7 +21,7 @@ public class TenistaGolpeador extends TenistaGenerico
      * 
      */
     public void golpear(){
-        super.setPuntosAcumulados(super.getPuntosAcumulados() + (super.getRaqueta().calcularVelocidad() * 0.1)); 
+        setPuntosAcumulados(getPuntosAcumulados() + (getRaqueta().calcularVelocidad() * 0.1)); 
     }
 
     @Override
@@ -32,7 +32,20 @@ public class TenistaGolpeador extends TenistaGenerico
     public void mostrar (){
         System.out.println(this.toString());
 
-    } 
+    }
+    
+    @Override
+    /**
+     * Juego de un par de tenistas. Uno saca, otro intenta restar.
+     * @param t2 Tenista que saca segundo(Tenista)
+     */
+    public void juego (Tenista t2){
+        sacar();
+        t2.restar(this);
+        golpear();
+        cambiarRaqueta();
+        //#cambios necesarios AQUI
+    }
 
     @Override
     /**

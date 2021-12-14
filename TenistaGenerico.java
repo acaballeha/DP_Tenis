@@ -171,7 +171,7 @@ public abstract class TenistaGenerico implements Tenista
      * tenista a sus puntos acumulados.
      * 
      */
-    private void sacar(){
+    public void sacar(){
         puntosAcumulados=puntosAcumulados + calcularSaque();
     }
 
@@ -242,6 +242,8 @@ public abstract class TenistaGenerico implements Tenista
     public void juego (Tenista t2){
         sacar();
         t2.restar(this);
+        golpear();
+        cambiarRaqueta();
         //#cambios necesarios AQUI
     }
 
