@@ -83,12 +83,10 @@ public class Campeonato
 
         if(competidores.size() <= raquetasCampeonato.size()){
             System.out.println("***** Asignando raquetas a tenistas *****");
-            Iterator <Raqueta> it =  raquetasCampeonato.iterator();
-            Raqueta aux;
+            
             for (Tenista t : competidores){
-                aux = it.next();
-                t.setRaqueta(aux);
-                aux.mostrar();
+                asignarRaqueta(t);
+                t.getRaqueta().mostrar();
                 System.out.println(" asignada a --> "+t.getNombre());
             }
 
