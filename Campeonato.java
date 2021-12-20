@@ -83,17 +83,19 @@ public class Campeonato
 
         if(competidores.size() <= raquetasCampeonato.size()){
             System.out.println("***** Asignando raquetas a tenistas *****");
-            
+            escribirFichero("***** Asignando raquetas a tenistas *****\n");
             for (Tenista t : competidores){
-                asignarRaqueta(t);
+                asignarRaquetaIni(t);
                 t.getRaqueta().mostrar();
+                escribirFichero(t.getRaqueta().toString());
                 System.out.println(" asignada a --> "+t.getNombre());
+                escribirFichero(" asignada a --> "+t.getNombre()+"\n");
             }
 
         }
         else{
-            System.out.println("No hay suficientes"+ 
-                "raquetas para todos los competidores");
+            System.out.println("No hay suficientes raquetas para todos los competidores");
+            escribirFichero("No hay suficientes raquetas para todos los competidores");
         }
     }
 
@@ -119,14 +121,16 @@ public class Campeonato
         competidores.remove(i);
 
     }
-    
+
     /**
      * Muestra los datos de todas las raquetas disponibles en el campeonato
      */
     private void mostrarRaquetas (){
         System.out.println("***** Listado de raquetas disponibles: ");
-        for(Raqueta t: raquetasCampeonato){
-            t.mostrar();
+        escribirFichero("***** Listado de raquetas disponibles: \n");
+        for(Raqueta r: raquetasCampeonato){
+            r.mostrar();
+            escribirFichero(r.toString()+"\n");
             System.out.println();
         }
     }
@@ -137,9 +141,13 @@ public class Campeonato
      */
     private void mostrarCompetidores(){
         System.out.println("***** Listado de competidores: ");
+        escribirFichero("***** Listado de competidores: \n");
         for (Tenista t: competidores){
             System.out.print("    **");
+            escribirFichero("    **");
             t.mostrar();
+            escribirFichero(t.toString());
+            escribirFichero("\n");
         }
     }
 
@@ -149,10 +157,13 @@ public class Campeonato
      */
     private void mostrarEliminados(){
         System.out.println("***** Listado de eliminados: ");
+        escribirFichero("***** Listado de eliminados: \n");
         for (Tenista t: eliminados){
             System.out.print("    **");
+            escribirFichero("    **");
             t.mostrar();
-
+            escribirFichero(t.toString());
+            escribirFichero("\n");
         }
     }
 
@@ -170,7 +181,7 @@ public class Campeonato
 
         for (int i=0; i<size/2;i++){
             System.out.println("\t### Juego ----------->>>: "+i);
-
+            escribirFichero("\t### Juego ----------->>>: "+i+"\n");//#salida
             //asignacion zapatillas
             //##Cambios necesarios aqui
             eliminarZapatilla(competidores.get(i).elegirZapatillas(zapatillasCampeonato));
@@ -178,18 +189,26 @@ public class Campeonato
 
             //Mostrar datos del primer tenista
             System.out.println("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre());
+            escribirFichero("\t## Tenista1 ---->>>: "+ competidores.get(i).getNombre()+"\n");//#salida
+
             if(competidores.get(i).getAsignacionZapatillas()==true){
                 System.out.print("\tZapatillas asignadas:  ");
+                escribirFichero("\tZapatillas asignadas:  ");//#salida
                 competidores.get(i).getZapatilla().mostrar();
                 System.out.println();
+
+                escribirFichero(competidores.get(i).getZapatilla().toString()+"\n");//#salida
             }
 
             //Mostrar datos del segundo tenista
             System.out.println("\t## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre());
+            escribirFichero("\t## Tenista2 ---->>>: "+ competidores.get(size-i-1).getNombre()+"\n");//#salida
             if(competidores.get(size-i-1).getAsignacionZapatillas()==true){
                 System.out.print("\tZapatillas asignadas:  ");
+                escribirFichero("\tZapatillas asignadas:  ");//#salida
                 competidores.get(size-i-1).getZapatilla().mostrar();
                 System.out.println();
+                escribirFichero(competidores.get(size-i-1).getZapatilla().toString()+"\n");//#salida
             }
 
             //Juego
@@ -205,10 +224,15 @@ public class Campeonato
 
                     System.out.println("\t## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
+                    escribirFichero("\t## Gana este juego: "+ competidores.get(i).getNombre()
+                        + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.\n");//#salida
 
                     System.out.println("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado núm: "+ orden);
+                    escribirFichero("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
+                        " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
+                        +" eliminado núm: "+ orden+"\n");//#salida
 
                     eliminarTenista(size-i-1);
                 }
@@ -216,9 +240,15 @@ public class Campeonato
                     System.out.println("\t## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
 
+                    escribirFichero("\t## Gana este juego: "+ competidores.get(i).getNombre()
+                        + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.\n");//#salida
+
                     System.out.println("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado núm: "+ orden);
+                    escribirFichero("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
+                        " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
+                        +" eliminado núm: "+ orden+"\n");//#salida
 
                     eliminarTenista(size-i-1);
                 }
@@ -230,9 +260,15 @@ public class Campeonato
                     System.out.println("\t## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
 
+                    escribirFichero("\t## Gana este juego: "+ competidores.get(i).getNombre()
+                        + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.\n");//#salida
+
                     System.out.println("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado núm: "+ orden);
+                    escribirFichero("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
+                        " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
+                        +" eliminado núm: "+ orden+"\n");//#salida
 
                     eliminarTenista(size-i-1);
                 }
@@ -240,10 +276,14 @@ public class Campeonato
 
                     System.out.println("\t## Gana este juego: "+ competidores.get(i).getNombre()
                         + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.");
-
+                    escribirFichero("\t## Gana este juego: "+ competidores.get(i).getNombre()
+                        + " con: " + competidores.get(i).getPuntosAcumulados()+ " puntos acumulados.\n");//#salida
                     System.out.println("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
                         " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
                         +" eliminado núm: "+ orden);
+                    escribirFichero("\t## Se elimina: "+competidores.get(size-i-1).getNombre()+
+                        " con: " +competidores.get(size-i-1).getPuntosAcumulados()+ " puntos acumulados. Tenista"
+                        +" eliminado núm: "+ orden+"\n");//#salida
 
                     eliminarTenista(size-i-1);
                 }
@@ -273,26 +313,38 @@ public class Campeonato
      * 
      */
     public void competicion(){
-        System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
 
-        asignarRaquetasTodos();
-        System.out.println();
-        mostrarCompetidores();
-        mostrarRaquetas();
+        try{
 
-        int rondas=1;
-        while(competidores.size()>=2){
-            System.out.println("\n\n***** Ronda---->>>: "+rondas);
-            ronda();
-            resetearPuntos();
-            rondas++;
-        }   
+            FileWriter flS= new FileWriter("salida.txt");
+            BufferedWriter fS= new BufferedWriter(flS);
 
-        System.out.print("\n\n---->>>>  Gana la competición: **");
-        competidores.get(0).mostrar();
-        System.out.println(" <<<<----\n\n");
+            System.out.println("***** Inicio del campeonato: "+nombre+ " *****\n");
+            escribirFichero("***** Inicio del campeonato: "+nombre+ " *****\n");
 
-        mostrarEliminados();
+            asignarRaquetasTodos();
+            System.out.println();
+            mostrarCompetidores();
+            mostrarRaquetas();
+
+            int rondas=1;
+            while(competidores.size()>=2){
+                System.out.println("\n\n***** Ronda---->>>: "+rondas);
+                escribirFichero("\n\n***** Ronda---->>>: "+rondas+"\n");//#salida
+                ronda();
+                resetearPuntos();
+                rondas++;
+            }   
+
+            System.out.print("\n\n---->>>>  Gana la competición: **");
+            escribirFichero("\n\n---->>>>  Gana la competición: **");//#salida
+            competidores.get(0).mostrar();
+            escribirFichero(competidores.get(0).toString());//#salida
+            System.out.println(" <<<<----\n\n");
+            escribirFichero(" <<<<----\n\n\n");//#salida
+
+            mostrarEliminados();
+        }catch(IOException e){}
     }
 
     //########################EC3#######################3
@@ -300,17 +352,41 @@ public class Campeonato
      * Asigna la primera raqueta al tenista y la elimina de la estructura.
      * (Siempre que haya raquetas disponibles).
      * @param t Tenista al que se le asignara una raqueta(Tenista).
+     * @return 
      */
-    public void asignarRaqueta(Tenista t){
+    public boolean asignarRaquetaIni(Tenista t){
+        boolean disp=false;
         if(!raquetasCampeonato.isEmpty()){
-            System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
-            t.setRaqueta(raquetasCampeonato.pollFirst());
-            System.out.println(t.getRaqueta().getModelo());
-        }
 
+            t.setRaqueta(raquetasCampeonato.pollFirst());
+
+            disp=true;
+        }
+        return disp;
     }
 
-    public void asignarRaquetaVelocidad(Tenista t){
+    /**
+     * Asigna la primera raqueta al tenista y la elimina de la estructura.
+     * (Siempre que haya raquetas disponibles).
+     * @param t Tenista al que se le asignara una raqueta(Tenista).
+     * @return 
+     */
+    public boolean asignarRaqueta(Tenista t){
+        boolean disp=false;
+        if(!raquetasCampeonato.isEmpty()){
+
+            t.setRaqueta(raquetasCampeonato.pollFirst());
+            System.out.println(t.getRaqueta().getTipo()+" modelo="+t.getRaqueta().getModelo()
+                +" velocidad="+t.getRaqueta().calcularVelocidad());
+            escribirFichero(t.getRaqueta().getTipo()+" modelo="+t.getRaqueta().getModelo()
+                +" velocidad="+t.getRaqueta().calcularVelocidad()+"\n");
+            disp=true;
+        }
+        return disp;
+    }
+
+    public boolean asignarRaquetaVelocidad(Tenista t){
+        boolean disp=false;
         if(!raquetasCampeonato.isEmpty()){
             Raqueta r = null;
             boolean enc = false;
@@ -318,14 +394,19 @@ public class Campeonato
             while(it.hasNext() && !enc){
                 r = it.next();
                 if(t.getRaqueta().calcularVelocidad() < r.calcularVelocidad()){
-                    System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
+
                     enc = true;
                     t.setRaqueta(r);
-                    System.out.println(t.getRaqueta().getModelo());
+                    System.out.println(t.getRaqueta().getTipo()+" modelo="+t.getRaqueta().getModelo()
+                        +" velocidad="+t.getRaqueta().calcularVelocidad());
+                    escribirFichero(t.getRaqueta().getTipo()+" modelo="+t.getRaqueta().getModelo()
+                        +" velocidad="+t.getRaqueta().calcularVelocidad()+"\n");
                     it.remove();
+                    disp=true;
                 }
             }
         }
+        return disp;
     }
 
     /**
@@ -380,5 +461,21 @@ public class Campeonato
             instance = new Campeonato(nombre);
         }
         return instance;
+    }
+    
+    /**
+     * Escribe la cadena indicada al final de fichero "salida.txt"
+     * @param cadena Cadena que se va a escribir(String)
+     */
+    public void escribirFichero(String cadena){
+        try{
+            FileWriter flS= new FileWriter("salida.txt", true);
+            BufferedWriter fS= new BufferedWriter(flS);
+
+            fS.write(cadena);
+
+            fS.close();
+
+        }catch(IOException e){}
     }
 }

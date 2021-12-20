@@ -227,7 +227,6 @@ public abstract class TenistaGenerico implements Tenista
         return str.toString();
     }
 
-    
 
     /**
      * Pone a 0 los puntos acumulados del tenista.
@@ -348,13 +347,18 @@ public abstract class TenistaGenerico implements Tenista
      */
     public void cambiarRaqueta(){
         Campeonato c=Campeonato.getInstance();
-        c.asignarRaqueta(this);
+        System.out.print(getNombre()+" cambia su raqueta por: ");
+        c.escribirFichero("\t"+getNombre()+" cambia su raqueta por: ");
+
+        if(!c.asignarRaqueta(this)){
+            System.out.println("ninguna");
+            c.escribirFichero("niguna\n");
+        }
     }
 
     /**
      * 
      */
     public abstract void golpear();
-
 
 }

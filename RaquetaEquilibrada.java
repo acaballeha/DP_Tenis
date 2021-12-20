@@ -104,4 +104,13 @@ public class RaquetaEquilibrada extends RaquetaGenerica
 
         return str.toString();
     }
+    
+    @Override
+    /**
+     * Devuelve el tipo de raqueta.
+     * @return tipoRaqueta devuelve el tipo de raqueta(String)
+     */
+    public  String getTipo(){
+        return "RaquetaEqulibrada";
+    }
 }

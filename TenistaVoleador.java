@@ -27,7 +27,13 @@ public class TenistaVoleador extends TenistaGenerico
     @Override
     public void cambiarRaqueta(){
         Campeonato c = Campeonato.getInstance();
-        c.asignarRaquetaVelocidad(this);
+        System.out.print(getNombre()+" cambia su raqueta por: ");
+        c.escribirFichero("\t"+getNombre()+" cambia su raqueta por: ");
+
+        if(!c.asignarRaquetaVelocidad(this)){
+            System.out.println("ninguna");
+            c.escribirFichero("niguna\n");
+        }
     }
 
     @Override
@@ -67,5 +73,4 @@ public class TenistaVoleador extends TenistaGenerico
         return str.toString();
     }
 
-    
 }

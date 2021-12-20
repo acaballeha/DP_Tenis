@@ -40,5 +40,5 @@ public interface Raqueta
 
     public double calcularVelocidad();
 
-
+    public String getTipo();
 }

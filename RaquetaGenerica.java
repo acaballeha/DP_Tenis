@@ -201,5 +201,12 @@ public abstract class RaquetaGenerica implements Raqueta
         return v.getVelocidad( new Double (peso));
 
     }
+    
+    /**
+     * Devuelve el tipo de raqueta.
+     * @return tipoRaqueta devuelve el tipo de raqueta(String)
+     */
+    public  String getTipo(){
+    return "";}
 
 }

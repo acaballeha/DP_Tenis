@@ -1,47 +1,45 @@
 ***** Inicio del campeonato: Campeonato de Extremadura *****
-
 ***** Asignando raquetas a tenistas *****
 	**RaquetaEquilibrada(MultiplicadorDePotencia:6.0(MultiplicadorDeControl:2.0)
 	[modelo=Head Graphene
 	longitud: 690.0,potencia asociada:24.0
 	tamaño: 630.0,control asociado:16.0
-	peso: 320.0,Velocidad Asociada:4.0]asignada a --> Novak Djokovic
+	peso: 320.0,Velocidad Asociada:4.0] asignada a --> Novak Djokovic
 	**RaquetaPotente(Encordado:ABIERTO)(MultiplicadorDePotencia:2.0(MultiplicadorDeControl:2.2)
 	[modelo=Wilson Pro Open
 	longitud: 740.0,potencia asociada:20.0
 	tamaño: 720.0,control asociado:2.0
-	peso: 340.0,Velocidad Asociada:3.0]asignada a --> Ashleigh Barty
+	peso: 340.0,Velocidad Asociada:3.0] asignada a --> Ashleigh Barty
 	**RaquetaEquilibrada(MultiplicadorDePotencia:8.0(MultiplicadorDeControl:1.0)
 	[modelo=Class 100L
 	longitud: 680.0,potencia asociada:16.0
 	tamaño: 720.0,control asociado:2.0
-	peso: 320.0,Velocidad Asociada:4.0]asignada a --> Stefanos Tsitsipas
+	peso: 320.0,Velocidad Asociada:4.0] asignada a --> Stefanos Tsitsipas
 	**RaquetaPotente(Encordado:CERRADO)(MultiplicadorDePotencia:1.8(MultiplicadorDeControl:2.5)
 	[modelo=Babolat Pure Drive
 	longitud: 720.0,potencia asociada:14.4
 	tamaño: 600.0,control asociado:10.0
-	peso: 260.0,Velocidad Asociada:12.0]asignada a --> Karolina Pliskova
+	peso: 260.0,Velocidad Asociada:12.0] asignada a --> Karolina Pliskova
 	**RaquetaEquilibrada(MultiplicadorDePotencia:6.0(MultiplicadorDeControl:3.0)
 	[modelo=Prince TT Bandit
 	longitud: 680.0,potencia asociada:12.0
 	tamaño: 680.0,control asociado:12.0
-	peso: 220.0,Velocidad Asociada:10.0]asignada a --> Elina Svitolina
+	peso: 220.0,Velocidad Asociada:10.0] asignada a --> Elina Svitolina
 	**RaquetaPotente(Encordado:ABIERTO)(MultiplicadorDePotencia:2.0(MultiplicadorDeControl:2.2)
 	[modelo=Dunlop CX200
 	longitud: 700.0,potencia asociada:12.0
 	tamaño: 630.0,control asociado:8.0
-	peso: 300.0,Velocidad Asociada:9.0]asignada a --> Alexander Zverev
+	peso: 300.0,Velocidad Asociada:9.0] asignada a --> Alexander Zverev
 	**RaquetaEquilibrada(MultiplicadorDePotencia:2.5(MultiplicadorDeControl:4.0)
 	[modelo=Prince Hornet 100
 	longitud: 690.0,potencia asociada:10.0
 	tamaño: 600.0,control asociado:40.0
-	peso: 220.0,Velocidad Asociada:10.0]asignada a --> Aryna Sabalenka
+	peso: 220.0,Velocidad Asociada:10.0] asignada a --> Aryna Sabalenka
 	**RaquetaControlada(Encordado:CERRADO)(MultiplicadorDePotencia:1.8(MultiplicadorDeControl:2.5)
 	[modelo=Babolat Drive
 	longitud: 740.0,potencia asociada:10.0
 	tamaño: 600.0,control asociado:25.0
-	peso: 340.0,Velocidad Asociada:2.4]asignada a --> Daniil Medvedev
-
+	peso: 340.0,Velocidad Asociada:2.4] asignada a --> Daniil Medvedev
 ***** Listado de competidores: 
     **(Golpeador)Tenista [Nombre= Novak Djokovic, Saque=90.0, Resto=80.0, Ranking=1, Pais=Serbia, numero pie=42]
       ZapatillasAmortiguadas [Modelo=Air Zoom Vapor Pro, Numero=42, Valor=5.0]
@@ -156,6 +154,8 @@
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Asics Gel-Game, Numero=42, Valor=4.5]
 	## Tenista2 ---->>>: Daniil Medvedev
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=K-Swiss Express, Numero=42, Valor=3.0]
+	Novak Djokovic cambia su raqueta por: RaquetaPotente modelo=Wilson Energy XL velocidad=12.0
+	Daniil Medvedev cambia su raqueta por: RaquetaPotente modelo=Wilson Blade velocidad=12.0
 	## Gana este juego: Novak Djokovic con: 84845.2 puntos acumulados.
 	## Se elimina: Daniil Medvedev con: 12287.58 puntos acumulados. Tenista eliminado núm: 1
 	### Juego ----------->>>: 1
@@ -163,18 +163,24 @@
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=Lotto Space, Numero=40, Valor=5.0]
 	## Tenista2 ---->>>: Aryna Sabalenka
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Adidas Gamecourt, Numero=40, Valor=5.0]
+	Ashleigh Barty cambia su raqueta por: RaquetaControlada modelo=Wilson Silver velocidad=12.0
+	Aryna Sabalenka cambia su raqueta por: RaquetaPotente modelo=Head Radical velocidad=12.0
 	## Gana este juego: Aryna Sabalenka con: 391891.49999999994 puntos acumulados.
 	## Se elimina: Ashleigh Barty con: 127728.30000000002 puntos acumulados. Tenista eliminado núm: 2
 	### Juego ----------->>>: 2
 	## Tenista1 ---->>>: Stefanos Tsitsipas
 	## Tenista2 ---->>>: Alexander Zverev
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=Babolat Jet Tere, Numero=42, Valor=5.5]
+	Stefanos Tsitsipas cambia su raqueta por: RaquetaPotente modelo=Yonex Vcore velocidad=9.0
+	Alexander Zverev cambia su raqueta por: RaquetaPotente modelo=Babolat Boost Drive velocidad=15.0
 	## Gana este juego: Alexander Zverev con: 75701.15999999999 puntos acumulados.
 	## Se elimina: Stefanos Tsitsipas con: 53222.8 puntos acumulados. Tenista eliminado núm: 3
 	### Juego ----------->>>: 3
 	## Tenista1 ---->>>: Karolina Pliskova
 	## Tenista2 ---->>>: Elina Svitolina
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Joma Slam, Numero=40, Valor=3.0]
+	Karolina Pliskova cambia su raqueta por: RaquetaControlada modelo=TFlash 300 velocidad=7.199999999999999
+	Elina Svitolina cambia su raqueta por: niguna
 	## Gana este juego: Elina Svitolina con: 78476.40000000001 puntos acumulados.
 	## Se elimina: Karolina Pliskova con: 74379.72 puntos acumulados. Tenista eliminado núm: 4
 
@@ -185,6 +191,8 @@
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Asics Solution, Numero=42, Valor=3.0]
 	## Tenista2 ---->>>: Elina Svitolina
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=K-Swiss Hypercourt, Numero=40, Valor=5.0]
+	Novak Djokovic cambia su raqueta por: RaquetaControlada modelo=Pure Aero velocidad=2.4
+	Elina Svitolina cambia su raqueta por: niguna
 	## Gana este juego: Elina Svitolina con: 125359.80000000002 puntos acumulados.
 	## Se elimina: Novak Djokovic con: 31105.199999999993 puntos acumulados. Tenista eliminado núm: 5
 	### Juego ----------->>>: 1
@@ -192,6 +200,8 @@
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Nike Air Zoom, Numero=40, Valor=5.0]
 	## Tenista2 ---->>>: Alexander Zverev
 	Zapatillas asignadas:  ZapatillasConAgarre [Modelo=Nike Zoom Vapor, Numero=42, Valor=4.0]
+	Aryna Sabalenka cambia su raqueta por: niguna
+	Alexander Zverev cambia su raqueta por: niguna
 	## Gana este juego: Alexander Zverev con: 80930.34 puntos acumulados.
 	## Se elimina: Aryna Sabalenka con: 61607.399999999994 puntos acumulados. Tenista eliminado núm: 6
 
@@ -202,12 +212,13 @@
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=Head Revolt, Numero=40, Valor=3.0]
 	## Tenista2 ---->>>: Alexander Zverev
 	Zapatillas asignadas:  ZapatillasAmortiguadas [Modelo=Wilson Rush, Numero=42, Valor=3.5]
+	Elina Svitolina cambia su raqueta por: niguna
+	Alexander Zverev cambia su raqueta por: niguna
 	## Gana este juego: Elina Svitolina con: 75216.6 puntos acumulados.
 	## Se elimina: Alexander Zverev con: 24086.700000000004 puntos acumulados. Tenista eliminado núm: 7
 
 
----->>>>  Gana la competición: **
-(Voleador)Tenista [Nombre= Elina Svitolina, Saque=55.5, Resto=68.5, Ranking=4, Pais=Ucrania, numero pie=40]
+---->>>>  Gana la competición: **(Voleador)Tenista [Nombre= Elina Svitolina, Saque=55.5, Resto=68.5, Ranking=4, Pais=Ucrania, numero pie=40]
       ZapatillasAmortiguadas [Modelo=Head Revolt, Numero=40, Valor=3.0]
 	**RaquetaEquilibrada(MultiplicadorDePotencia:6.0(MultiplicadorDeControl:3.0)
 	[modelo=Prince TT Bandit
@@ -215,6 +226,7 @@
 	tamaño: 680.0,control asociado:12.0
 	peso: 220.0,Velocidad Asociada:10.0]
  <<<<----
+
 
 ***** Listado de eliminados: 
     **(Voleador)Tenista [Nombre= Alexander Zverev, Saque=59.0, Resto=49.5, Ranking=4, Pais=Alemania, numero pie=42]
