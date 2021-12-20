@@ -73,5 +73,6 @@ public interface Tenista
     public void cambiarRaqueta();
 
     public abstract void golpear();
-  
+    
+
 }

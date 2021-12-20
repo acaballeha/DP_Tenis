@@ -1,4 +1,4 @@
-
+import java.io.*;
 /**
  * Write a description of class TenistaGolpeador here.
  * 
@@ -60,4 +60,6 @@ public class TenistaGolpeador extends TenistaGenerico
 
         return str.toString();
     }
+    
+ 
 }

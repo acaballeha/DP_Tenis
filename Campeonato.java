@@ -126,7 +126,6 @@ public class Campeonato
     private void mostrarRaquetas (){
         System.out.println("***** Listado de raquetas disponibles: ");
         for(Raqueta t: raquetasCampeonato){
-            System.out.print("    **");
             t.mostrar();
             System.out.println();
         }
@@ -306,7 +305,7 @@ public class Campeonato
         if(!raquetasCampeonato.isEmpty()){
             System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
             t.setRaqueta(raquetasCampeonato.pollFirst());
-            System.out.println(t.getRaqueta().toString());
+            System.out.println(t.getRaqueta().getModelo());
         }
 
     }
@@ -322,7 +321,7 @@ public class Campeonato
                     System.out.print("\t"+t.getNombre()+" cambia su raqueta por: ");
                     enc = true;
                     t.setRaqueta(r);
-                    System.out.println(t.getRaqueta().toString());
+                    System.out.println(t.getRaqueta().getModelo());
                     it.remove();
                 }
             }
